@@ -238,7 +238,7 @@ export const bundle = async (variant, engine) => {
             alias: engine.alias ?? {}
         },
         plugins: engine.resolveFrom ? [{
-            name: 'engine-metrics-resolve-library',
+            name: 'playcanvas-metrics-resolve-library',
             enforce: 'pre',
             resolveId(source, importer, options) {
                 // only redirect imports written in the scenario, not the library's own

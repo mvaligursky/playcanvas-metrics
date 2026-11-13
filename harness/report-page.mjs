@@ -239,7 +239,7 @@ export const writeReportPage = () => {
     write(path.join(OUT_DIR, 'index.html'), fs.readFileSync(path.join(SITE_DIR, 'home.html')));
 
     // the server's root leads to the report
-    write(path.join(DIST_DIR, 'index.html'), '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=report/"><a href="report/">Engine metrics report</a>\n');
+    write(path.join(DIST_DIR, 'index.html'), '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=report/"><a href="report/">PlayCanvas metrics report</a>\n');
 
     return path.join(OUT_DIR, 'index.html');
 };
