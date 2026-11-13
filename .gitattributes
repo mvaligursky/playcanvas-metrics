@@ -1,0 +1,14 @@
+# Line endings are stored as LF in the repo; contributors keep their native ones locally.
+* text=auto
+
+*.js text
+*.mjs text
+*.json text
+*.md text
+*.html text
+*.css text
+*.yml text
+
+# Binary files are never modified.
+*.png binary
+*.glb binary

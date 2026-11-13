@@ -1,0 +1,10 @@
+{
+  "title": "Spinning cube",
+  "description": "The smallest lit scene: one procedural cube and one directional light.",
+  "headline": "webgpu-or-webgl2",
+  "revision": 2,
+  "implementations": [
+    { "framework": "playcanvas", "dir": "playcanvas", "engine": ">=2.20.0" },
+    { "framework": "three", "dir": "three", "engine": ">=0.183.0", "reference": "reference.three.png" }
+  ]
+}

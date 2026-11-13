@@ -1,0 +1,10 @@
+{
+  "title": "glTF model with shadows",
+  "description": "A loaded glTF model with textured PBR materials on a ground plane, under directional, omni and spot lights that all cast shadows.",
+  "headline": "webgpu-or-webgl2",
+  "revision": 2,
+  "implementations": [
+    { "framework": "playcanvas", "dir": "playcanvas", "engine": ">=2.20.0" },
+    { "framework": "three", "dir": "three", "engine": ">=0.183.0", "reference": "reference.three.png" }
+  ]
+}

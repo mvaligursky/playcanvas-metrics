@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treemap - {{TITLE}} - bundle size</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="tm-page" data-page="treemap">
+    <header class="tm-bar">
+        <div class="tm-heading">
+            <div class="crumbs"><a href="../../../">Engine metrics</a> / <a href="../../">Bundle size</a> / <a id="back" href="../">{{TITLE}}</a> / Treemap</div>
+            <h1 id="tmTitle">Inside the bundle</h1>
+        </div>
+        <label>Library
+            <select autocomplete="off" id="library2"></select>
+        </label>
+        <label>Variant
+            <select autocomplete="off" id="bundle"></select>
+        </label>
+        <label>From
+            <select autocomplete="off" id="from"></select>
+        </label>
+        <label>To
+            <select autocomplete="off" id="to"></select>
+        </label>
+        <label class="check"><input type="checkbox" autocomplete="off" id="byChange"> <span id="byChangeLabel"></span></label>
+        <label class="check"><input type="checkbox" autocomplete="off" id="branches"> Include other branches</label>
+        <span class="tm-scale" title="Magnify to give more boxes room for their names. Also: Ctrl + mouse wheel or pinch to zoom at the pointer, drag to move, and the + - 0 keys.">
+            <button id="scaleDown" aria-label="Magnify less">&minus;</button>
+            <span id="scaleText">100%</span>
+            <button id="scaleUp" aria-label="Magnify more">+</button>
+            <button id="scaleFit">Fit</button>
+        </span>
+    </header>
+    <div class="tm-crumbs" id="tmCrumbs"></div>
+    <div class="tm-view" id="tmView"><div class="treemap" id="treemap"></div></div>
+    <div class="legend" id="tmLegend"></div>
+    <div class="note">Ctrl + wheel or pinch zooms at the pointer &middot; drag to move &middot; + and &minus; zoom, 0 fits &middot; click a folder name to open it</div>
+
+<script>const ROOT = '../../../../';</script>
+<script src="../../../assets/common.js"></script>
+<script src="../../../assets/treemap.js"></script>
+<script src="../../../data/{{SCENARIO}}.js"></script>
+<script src="../../../assets/scenario.js"></script>
+</body>
+</html>

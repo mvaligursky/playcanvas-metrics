@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bundle size - Engine metrics</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+    <div class="crumbs"><a id="up" href="../">Engine metrics</a> / Bundle size</div>
+    <h1>Bundle size</h1>
+    <p class="lede">What each scenario ships after tree-shaking, bundling and minifying. Each chart shows one variant for every library that has it, by release date. Open a scenario for what the bundle is made of and what changed between versions.</p>
+
+    <div class="filters">
+        <label>Size measure
+            <select autocomplete="off" id="metric">
+                <option value="brotli">Brotli</option>
+                <option value="gzip">Gzip</option>
+                <option value="raw">Raw (minified)</option>
+            </select>
+        </label>
+        <label>Variant
+            <select autocomplete="off" id="variant"></select>
+        </label>
+    </div>
+
+    <div id="scenarios"></div>
+</main>
+
+<script src="../assets/chart.js"></script>
+<script src="../assets/common.js"></script>
+<script src="../data/summary.js"></script>
+<script>
+// which graphics API the bundle is built for
+const VARIANT_NAME = {
+    'webgpu-or-webgl2': 'WebGPU or WebGL2',
+    'webgl2': 'WebGL2 only',
+    'webgpu': 'WebGPU only'
+};
+const variantName = variant => VARIANT_NAME[variant] ?? variant;
+
+// the headline variant first, as it is the default
+const HEADLINE = SUMMARY.scenarios[0]?.headline;
+const VARIANTS = [...new Set(SUMMARY.scenarios.flatMap(scenario => scenario.variants))]
+.sort((a, b) => (b === HEADLINE) - (a === HEADLINE));
+
+const state = {
+    metric: readParam('metric', DEFAULT_METRIC, METRICS),
+    variant: readParam('variant', HEADLINE, VARIANTS)
+};
+
+// the address of a scenario's page, carrying the current choices along
+const scenarioHref = (scenario) => {
+    const query = new URLSearchParams();
+    if (state.metric !== DEFAULT_METRIC) {
+        query.set('metric', state.metric);
+    }
+    if (state.variant !== scenario.headline) {
+        query.set('variant', state.variant);
+    }
+    return `${scenario.name}/${query.size ? `?${query}` : ''}`;
+};
+
+function render() {
+    $('metric').value = state.metric;
+    $('variant').value = state.variant;
+    $('up').href = withMetric('../', state.metric);
+    writeParams({
+        metric: state.metric === DEFAULT_METRIC ? null : state.metric,
+        variant: state.variant === HEADLINE ? null : state.variant
+    });
+
+    $('scenarios').innerHTML = SUMMARY.scenarios.map((scenario, i) => {
+        const series = scenario.series[state.variant] ?? {};
+        const rows = scenario.libraries.map((lib) => {
+            if (!series[lib]) {
+                return `<tr><td>${libLabel(lib)}</td><td class="dim" colspan="2">has no ${esc(variantName(state.variant))} variant</td></tr>`;
+            }
+            const now = latestRelease(series[lib]);
+            const was = previousRelease(series[lib]);
+            if (!now) {
+                return '';
+            }
+            const diff = was ? now.size[state.metric] - was.size[state.metric] : null;
+            return `<tr><td>${libLabel(lib, now.name)}</td><td>${kb(now.size[state.metric])}</td>
+                <td class="${diff === null ? 'dim' : cls(diff)}">${diff === null ? '&mdash;' :`${signed(diff)} since ${esc(was.name)}`}</td></tr>`;
+        }).join('');
+        return `<a class="card scenario-card" href="${scenarioHref(scenario)}">
+            <div>
+                <img class="thumb" src="${scenario.name}/reference.png" alt="What ${esc(scenario.title)} renders">
+                <h2>${esc(scenario.title)}</h2>
+                <p class="note">${esc(scenario.description)}</p>
+                <div class="open">Open the full report &rarr;</div>
+            </div>
+            <div>
+                <h3>${esc(variantName(state.variant))}, ${METRIC_NAME[state.metric]} by release date</h3>
+                <div class="plot small"><canvas id="chart${i}"></canvas></div>
+                <table><thead><tr><th>Latest release</th><th>Size</th><th>Change</th></tr></thead><tbody>${rows}</tbody></table>
+            </div>
+        </a>`;
+    }).join('');
+
+    SUMMARY.scenarios.forEach((scenario, i) => timelineChart(`chart${i}`, scenario.series[state.variant] ?? {}, state.metric));
+}
+
+$('variant').innerHTML = VARIANTS.map(variant => `<option value="${esc(variant)}">${esc(variantName(variant))}</option>`).join('');
+$('metric').addEventListener('change', (event) => {
+    state.metric = event.target.value;
+    render();
+});
+$('variant').addEventListener('change', (event) => {
+    state.variant = event.target.value;
+    render();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

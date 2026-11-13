@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine metrics</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+    <h1>Engine metrics</h1>
+    <p class="lede">How the <span class="lib lib-playcanvas">PlayCanvas</span> engine changes from release to release, and how it compares with <span class="lib lib-three">three.js</span> on the same scenes.</p>
+    <p class="note" id="setup"></p>
+
+    <div class="cards" id="sections"></div>
+</main>
+
+<script src="assets/chart.js"></script>
+<script src="assets/common.js"></script>
+<script src="data/summary.js"></script>
+<script>
+const metric = readParam('metric', DEFAULT_METRIC, METRICS);
+
+function render() {
+    $('sections').innerHTML = SUMMARY.sections.map((section) => {
+        if (!section.measured) {
+            return `<div class="card off"><h2>${esc(section.title)}</h2><p class="note">${esc(section.description)}</p><div class="open">Not measured yet</div></div>`;
+        }
+        // one row per scenario: where PlayCanvas' latest release stands, and its trend
+        const rows = SUMMARY.scenarios.map((scenario, i) => {
+            const points = scenario.series[scenario.headline]?.playcanvas ?? [];
+            const now = latestRelease(points);
+            const was = previousRelease(points);
+            if (!now) {
+                return '';
+            }
+            const diff = was ? now.size[metric] - was.size[metric] : null;
+            return `<div style="margin-top: 14px">
+                <h3>${esc(scenario.title)}</h3>
+                <div><strong>${kb(now.size[metric])}</strong> <span class="note">${libLabel('playcanvas', now.name)}${diff === null ? '' : `, <span class="${cls(diff)}">${signed(diff)}</span> since ${esc(was.name)}`}</span></div>
+                <div class="plot spark"><canvas id="spark${i}"></canvas></div>
+            </div>`;
+        }).join('');
+        const libs = [...new Set(SUMMARY.scenarios.flatMap(scenario => scenario.libraries))];
+        const legend = `<div class="legend">${libs.map(lib => `<span><i style="background:${libColor(lib)}"></i>${libLabel(lib)}</span>`).join('')}</div>`;
+        return `<a class="card" href="${withMetric(`${section.id}/`, metric)}"><h2>${esc(section.title)}</h2><p class="note">${esc(section.description)} Shown as ${METRIC_NAME[metric]}, for each scenario's headline variant.</p>${rows}${legend}<div class="open">${SUMMARY.scenarios.length} scenarios →</div></a>`;
+    }).join('');
+
+    SUMMARY.scenarios.forEach((scenario, i) => {
+        if ($(`spark${i}`)) {
+            timelineChart(`spark${i}`, scenario.series[scenario.headline], metric, true);
+        }
+    });
+}
+
+if (SUMMARY.environment) {
+    $('setup').textContent = `Measured on ${SUMMARY.environment.text}. Generated ${SUMMARY.generated.slice(0, 10)}.`;
+}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "engine-metrics",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Benchmarks tracking PlayCanvas engine bundle size and performance over time",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "bench": "node harness/run.mjs",
+    "report": "node harness/report-page.mjs",
+    "serve": "node harness/serve.mjs",
+    "lint": "eslint harness scenarios eslint.config.mjs",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "node harness/run.mjs --engine 2.24.1,three@0.187.0 --scenario spinning-cube --no-verify --no-save && node harness/report-page.mjs"
+  },
+  "devDependencies": {
+    "@jridgewell/sourcemap-codec": "1.5.5",
+    "@playcanvas/eslint-config": "3.0.0-beta.8",
+    "chart.js": "4.6.1",
+    "eslint": "9.39.5",
+    "globals": "17.12.0",
+    "playwright-core": "1.65.0",
+    "pngjs": "7.0.0",
+    "semver": "7.8.6",
+    "vite": "8.3.3"
+  }
+}

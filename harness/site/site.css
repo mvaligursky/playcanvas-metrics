@@ -1,0 +1,203 @@
+:root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --text: #0b0b0b;
+    --text-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --axis: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --neutral: #f0efec;
+    /* PlayCanvas' brand orange, the same in both themes */
+    --playcanvas: #ff6600;
+    /* library names in text: the same hues as their lines, darkened where needed to stay readable */
+    --playcanvas-text: #c24a00;
+    --three-text: #1c5cab;
+    /* variant names in text, in the order of VARIANT_SLOTS: aqua, violet, yellow */
+    --variant-1-text: #0e7a55;
+    --variant-2-text: #4a3aa7;
+    --variant-3-text: #8a5f00;
+    --up: #b3261e;
+    --down: #006300;
+    /* treemap comparison: added bytes, removed bytes and the stripe over removed */
+    --added: #f0908f;
+    --removed: #8fcf8f;
+    --removed-stripe: #c5e8c5;
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --s4: #eda100;
+    --s5: #e87ba4;
+    --s6: #008300;
+    --s7: #6250d6;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --page: #0d0d0d;
+        --surface: #1a1a19;
+        --text: #f0efec;
+        --text-2: #c3c2b7;
+        --muted: #898781;
+        --grid: #2c2c2a;
+        --axis: #383835;
+        --border: rgba(255, 255, 255, 0.10);
+        --neutral: #383835;
+        --playcanvas-text: #ff6600;
+        --three-text: #5598e7;
+        --variant-1-text: #2fc08c;
+        --variant-2-text: #a39af0;
+        --variant-3-text: #e09a14;
+        --up: #e66767;
+        --down: #0ca30c;
+        --added: #a83a3a;
+        --removed: #1f7a1f;
+        --removed-stripe: #145214;
+        --s1: #3987e5;
+        --s2: #d95926;
+        --s3: #199e70;
+        --s4: #c98500;
+        --s5: #d55181;
+        --s6: #008300;
+        --s7: #9085e9;
+    }
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding: 24px 16px 64px;
+    background: var(--page);
+    color: var(--text);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main { max-width: 1120px; margin: 0 auto; }
+a { color: inherit; }
+h1 { font-size: 22px; margin: 0; }
+h2 { font-size: 16px; margin: 0 0 2px; }
+h3 { font-size: 13px; font-weight: 600; color: var(--text-2); margin: 0; }
+.crumbs { font-size: 13px; color: var(--text-2); margin-bottom: 6px; }
+.crumbs a { color: var(--text-2); }
+.lede, .note { color: var(--text-2); margin: 2px 0 0; }
+.note { font-size: 13px; }
+.section { font-size: 18px; margin: 32px 0 12px; }
+
+.filters {
+    display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: end;
+    margin: 20px 0; padding: 12px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    position: sticky; top: 0; z-index: 2;
+}
+/* a second bar, for a section's own pickers; it sticks below the page's bar */
+.filters.sub { top: var(--bar-height, 0px); z-index: 1; }
+.filters .jump { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; padding-bottom: 6px; margin-left: auto; }
+.filters .jump a { color: var(--text-2); }
+h2.section { scroll-margin-top: calc(var(--bar-height, 0px) + 12px); }
+.filters label { display: grid; gap: 4px; font-size: 12px; color: var(--text-2); }
+.filters label.check { display: flex; align-items: center; gap: 6px; font-size: 13px; padding-bottom: 6px; }
+select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--axis); border-radius: 6px; padding: 5px 8px; max-width: 100%;
+}
+button { font: inherit; color: var(--text); background: none; border: 1px solid var(--axis); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+
+.tile, .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+.card { padding: 16px; margin-top: 16px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.tile { padding: 14px 16px; }
+.tile .name { font-size: 12px; color: var(--text-2); }
+.tile .value { font-size: 28px; font-weight: 600; line-height: 1.25; }
+.tile .change { font-size: 13px; color: var(--text-2); }
+
+/* cards that are links to the next level down */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 20px; }
+a.card { display: block; text-decoration: none; margin-top: 0; }
+a.card:hover, a.card:focus-visible { border-color: var(--axis); }
+.card.off { opacity: 0.6; }
+.card .open { font-size: 13px; color: var(--text-2); margin-top: 10px; }
+.thumb { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; background: var(--grid); margin-bottom: 12px; }
+a.scenario-card { display: grid; grid-template-columns: 260px 1fr; gap: 24px; margin-top: 16px; }
+@media (max-width: 720px) { a.scenario-card { grid-template-columns: 1fr; } }
+
+.plot { position: relative; height: 320px; margin-top: 12px; }
+.plot.small { height: 220px; }
+.plot.spark { height: 56px; margin-top: 6px; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 24px; margin-top: 12px; }
+
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; }
+th, td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+td.wrap { white-space: normal; word-break: break-all; }
+thead th { color: var(--text-2); font-weight: 600; border-bottom-color: var(--axis); }
+tfoot td { font-weight: 600; border-bottom: 0; }
+td a { color: var(--text-2); margin-left: 8px; font-size: 12px; }
+/* a library's name, wherever it appears in text */
+.lib { font-weight: 600; }
+.lib-playcanvas { color: var(--playcanvas-text); }
+.lib-three { color: var(--three-text); }
+.up { color: var(--up); }
+.down { color: var(--down); }
+.dim { color: var(--muted); }
+.tag { font-size: 11px; padding: 1px 6px; border: 1px solid var(--axis); border-radius: 999px; color: var(--text-2); margin-left: 6px; }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: var(--text-2); font-size: 13px; }
+
+/* treemap */
+.tm-crumbs { font-size: 13px; color: var(--text-2); margin-top: 10px; min-height: 20px; }
+.tm-crumbs button { border: 0; padding: 0; color: var(--text); text-decoration: underline; }
+.treemap { position: relative; height: 560px; margin-top: 8px; overflow: hidden; border-radius: 6px; }
+/* the treemap's own page: a bar of pickers, then the treemap filling the rest of the window */
+body.tm-page { height: 100vh; padding: 12px 16px; display: flex; flex-direction: column; overflow: hidden; }
+.tm-bar { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: end; }
+.tm-bar label { display: grid; gap: 4px; font-size: 12px; color: var(--text-2); }
+.tm-bar label.check { display: flex; align-items: center; gap: 6px; font-size: 13px; padding-bottom: 6px; }
+.tm-heading { margin-right: auto; }
+.tm-heading h1 { font-size: 18px; }
+.tm-scale { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-2); padding-bottom: 2px; }
+.tm-scale span { min-width: 44px; text-align: center; font-variant-numeric: tabular-nums; }
+.tm-scale button:disabled { opacity: 0.4; cursor: default; }
+.tm-view { flex: 1; min-height: 0; overflow: auto; margin-top: 6px; border-radius: 6px; }
+.tm-view .treemap { height: auto; margin-top: 0; }
+.tm-view.can-pan { cursor: grab; }
+.tm-view.panning { cursor: grabbing; user-select: none; }
+.tm-view.panning .tm-head { cursor: grabbing; }
+.tm-page .legend { margin-top: 8px; }
+
+.tm-group { position: absolute; border: 1px solid var(--axis); border-radius: 4px; overflow: hidden; }
+.tm-head {
+    position: absolute; left: 0; right: 0; top: 0; height: 18px; padding: 0 5px;
+    font-size: 11px; line-height: 18px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    cursor: zoom-in; background: var(--surface);
+}
+.tm-head:hover { color: var(--text); text-decoration: underline; }
+.tm-leaf {
+    position: absolute; overflow: hidden; border-radius: 3px;
+    /* a surface-coloured edge keeps neighbouring boxes apart */
+    border: 1px solid var(--surface);
+    font-size: 11px; line-height: 1.25; padding: 2px 4px; color: #fff;
+}
+.tm-leaf.dark-text { color: #0b0b0b; }
+/* comparing two builds: a neutral box, with the added or removed share marked */
+.tm-leaf.cmp { background: var(--neutral); color: var(--text); }
+.tm-leaf.cmp span { position: relative; }
+.tm-part { position: absolute; }
+.tm-part.added { background: var(--added); }
+/* stripes as well as colour, so removed does not rely on telling red from green */
+.tm-part.removed { background: repeating-linear-gradient(45deg, var(--removed), var(--removed) 4px, var(--removed-stripe) 4px, var(--removed-stripe) 8px); }
+.legend i.added { background: var(--added); }
+.legend i.removed { background: repeating-linear-gradient(45deg, var(--removed), var(--removed) 3px, var(--removed-stripe) 3px, var(--removed-stripe) 6px); }
+.legend i.same { background: var(--neutral); border: 1px solid var(--axis); }
+.tm-leaf:hover { outline: 2px solid var(--text); outline-offset: -2px; }
+.tm-leaf span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tm-leaf .sz { opacity: 0.85; }
+.tm-tip {
+    position: fixed; z-index: 5; pointer-events: none; max-width: 420px;
+    background: var(--surface); color: var(--text); border: 1px solid var(--axis); border-radius: 6px;
+    padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); word-break: break-all;
+}
+.tm-tip .t2 { color: var(--text-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--text-2); margin-top: 10px; align-items: center; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -2px; }
+.legend .ramp { display: inline-flex; margin: 0 6px; vertical-align: -2px; }
+.legend .ramp i { margin: 0; border-radius: 0; width: 18px; }

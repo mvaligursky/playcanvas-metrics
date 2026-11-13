@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} - bundle size</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main>
+    <div class="crumbs"><a href="../../">Engine metrics</a> / <a id="up" href="../">Bundle size</a> / {{TITLE}}</div>
+    <h1>{{TITLE}}</h1>
+    <p class="lede" id="lede"></p>
+    <p class="note" id="setup"></p>
+
+    <!-- every bar sits directly above the content it changes -->
+    <div class="filters">
+        <label>Size measure
+            <select autocomplete="off" id="metric">
+                <option value="brotli">Brotli</option>
+                <option value="gzip">Gzip</option>
+                <option value="raw">Raw (minified)</option>
+            </select>
+        </label>
+        <span class="jump">
+            <a href="#libraries">Libraries compared</a>
+            <a href="#versions">One library by version</a>
+            <a href="#bundle-section">Inside one bundle</a>
+        </span>
+    </div>
+
+    <h2 class="section" id="libraries">Libraries compared</h2>
+    <section class="card" id="cmpCard">
+        <h2>The same scene in each library</h2>
+        <div class="pair" id="timelines"></div>
+        <div class="scroll"><table id="cmpTable"></table></div>
+    </section>
+
+    <h2 class="section" id="versions">One library by version</h2>
+    <div class="filters sub">
+        <label>Library
+            <select autocomplete="off" id="library"></select>
+        </label>
+        <label class="check"><input type="checkbox" autocomplete="off" id="branches"> Include other branches</label>
+    </div>
+    <div class="tiles" id="tiles"></div>
+
+    <section class="card">
+        <h2 id="sizeTitle">Tree-shaken bundle size by version</h2>
+        <p class="note">What the scenario ships after bundling and minifying, for every variant. Builds of published releases can be run from the table. A diamond marks the first version measured with a different scenario implementation.</p>
+        <div class="plot"><canvas id="sizeChart"></canvas></div>
+        <div class="scroll"><table id="sizeTable"></table></div>
+    </section>
+
+    <section class="card">
+        <h2 id="fullTitle">Full library size by version</h2>
+        <p class="note" id="fullNote"></p>
+        <div class="plot small"><canvas id="fullChart"></canvas></div>
+    </section>
+
+    <h2 class="section" id="bundle-section">Inside one bundle</h2>
+    <p class="note">One variant of one library: how two of its versions differ, and what it is made of.</p>
+    <div class="filters sub">
+        <label>Library
+            <select autocomplete="off" id="library2"></select>
+        </label>
+        <label>Variant
+            <select autocomplete="off" id="bundle"></select>
+        </label>
+        <label>From
+            <select autocomplete="off" id="from"></select>
+        </label>
+        <label>To
+            <select autocomplete="off" id="to"></select>
+        </label>
+        <label class="check"><input type="checkbox" autocomplete="off" id="byChange"> <span id="byChangeLabel"></span></label>
+    </div>
+    <div class="tiles" id="compareTiles"></div>
+
+    <section class="card">
+        <h2 id="tmTitle">Inside the bundle</h2>
+        <p class="note">Every module in the "To" version's bundle, sized by its minified bytes before compression and nested by folder. Tick the box above to mark what was added and removed since the "From" version. Click a folder's name to zoom in. <a id="tmOpen" href="treemap/" target="_blank" rel="noopener">Open full screen in a new tab &nearr;</a></p>
+        <div class="tm-crumbs" id="tmCrumbs"></div>
+        <div class="treemap" id="treemap"></div>
+        <div class="legend" id="tmLegend"></div>
+    </section>
+
+    <section class="card">
+        <h2 id="diffTitle">Modules that changed</h2>
+        <p class="note" id="diffNote"></p>
+        <div class="scroll"><table id="diffTable"></table></div>
+        <button id="diffMore" hidden style="margin-top: 10px"></button>
+    </section>
+
+    <section class="card">
+        <h2 id="compTitle">What the bundle is made of</h2>
+        <p class="note">Minified bytes by area of the library, before compression, for every version (the size measure does not apply here).</p>
+        <div class="plot"><canvas id="compChart"></canvas></div>
+        <details>
+            <summary>Show as a table</summary>
+            <div class="scroll"><table id="compTable"></table></div>
+        </details>
+    </section>
+</main>
+
+<script>const ROOT = '../../../';</script>
+<script src="../../assets/chart.js"></script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/treemap.js"></script>
+<script src="../../data/{{SCENARIO}}.js"></script>
+<script src="../../assets/scenario.js"></script>
+</body>
+</html>

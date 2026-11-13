@@ -1,0 +1,6 @@
+node_modules/
+.cache/
+dist/
+
+# results of builds from source (main, branches, a working tree) stay on the machine that made them
+results/local/
