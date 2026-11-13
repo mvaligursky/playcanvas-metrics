@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "timestamp": "2026-11-13T15:49:30.365Z",
+  "timestamp": "2026-11-13T17:00:14.174Z",
   "machine": "m-30fde358",
   "environment": {
     "id": "m-30fde358",
@@ -18,7 +18,7 @@
   },
   "harness": {
     "version": "0.2.0",
-    "commit": "0c3f97589bcf509eb82e38ec4e930265061f011e",
+    "commit": "0423e3a96a37b3af1448167b509ea72bb3ea5d82",
     "dirty": true,
     "node": "v24.22.2",
     "vite": "8.3.3",
@@ -70,6 +70,52 @@
       "brotli": 212460
     }
   },
+  "whole": {
+    "three": {
+      "name": "three, all exports",
+      "size": {
+        "raw": 709566,
+        "gzip": 181686,
+        "brotli": 146459
+      },
+      "modules": [
+        {
+          "id": "build/three.core.js",
+          "bytes": 366558
+        },
+        {
+          "id": "build/three.module.js",
+          "bytes": 333644
+        },
+        {
+          "id": "(export list)",
+          "bytes": 9364
+        }
+      ]
+    },
+    "three/webgpu": {
+      "name": "three/webgpu, all exports",
+      "size": {
+        "raw": 969178,
+        "gzip": 265462,
+        "brotli": 212460
+      },
+      "modules": [
+        {
+          "id": "build/three.webgpu.js",
+          "bytes": 590057
+        },
+        {
+          "id": "build/three.core.js",
+          "bytes": 366377
+        },
+        {
+          "id": "(export list)",
+          "bytes": 12744
+        }
+      ]
+    }
+  },
   "bundles": [
     {
       "scenario": "glb-shadows",
@@ -82,6 +128,7 @@
         "dir": "three",
         "hash": "9aba05a3fb72"
       },
+      "whole": "three",
       "build": "builds/three-0.181.2/glb-shadows/webgl2/",
       "size": {
         "raw": 578302,
@@ -134,7 +181,7 @@
       "referenceDiff": 0.000006510416666666667,
       "canonicalDiff": {
         "outline": 0,
-        "shading": 1.903929375142425
+        "shading": 1.903929700179004
       }
     },
     {
@@ -148,6 +195,7 @@
         "dir": "three",
         "hash": "9aba05a3fb72"
       },
+      "whole": "three/webgpu",
       "build": "builds/three-0.181.2/glb-shadows/webgpu-or-webgl2/",
       "size": {
         "raw": 761291,
@@ -210,6 +258,7 @@
         "dir": "three",
         "hash": "9d67289e1ce0"
       },
+      "whole": "three",
       "build": "builds/three-0.181.2/spinning-cube/webgl2/",
       "size": {
         "raw": 495834,
@@ -264,6 +313,7 @@
         "dir": "three",
         "hash": "9d67289e1ce0"
       },
+      "whole": "three/webgpu",
       "build": "builds/three-0.181.2/spinning-cube/webgpu-or-webgl2/",
       "size": {
         "raw": 692338,

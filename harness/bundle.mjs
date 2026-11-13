@@ -34,43 +34,6 @@ export const measureFiles = (files) => {
     return total;
 };
 
-// bundles every export of one of a library's entry points, minified like a scenario
-const measureEverything = async (engine, specifier) => {
-    const dir = path.dirname(engine.resolveFrom.importer);
-    const name = `everything-${specifier.replace(/\W+/g, '-')}`;
-    const entry = path.join(dir, `${name}.js`);
-    const outDir = path.join(dir, name);
-    fs.writeFileSync(entry, `export * from '${specifier}';\n`);
-
-    await build({
-        configFile: false,
-        root: dir,
-        logLevel: 'warn',
-        build: {
-            outDir,
-            emptyOutDir: true,
-            target: 'esnext',
-            minify: true,
-            modulePreload: { polyfill: false },
-            reportCompressedSize: false,
-            chunkSizeWarningLimit: Infinity,
-            rolldownOptions: { input: entry, preserveEntrySignatures: 'strict' }
-        }
-    });
-
-    return measureFiles(listFiles(outDir).filter(file => file.endsWith('.js')));
-};
-
-/**
- * @param {object} engine - The resolved engine.
- * @param {{ files?: string[], everything?: string }} baseline - Published minified files, or an
- * entry point whose every export is bundled.
- * @returns {Promise<{ raw: number, gzip: number, brotli: number }>} The size of the full library.
- */
-export const measureBaseline = (engine, baseline) => {
-    return baseline.files ? measureFiles(baseline.files) : measureEverything(engine, baseline.everything);
-};
-
 function listFiles(dir) {
     return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
         const file = path.join(dir, entry.name);
@@ -218,22 +181,12 @@ const attribute = (jsFile, engine, totals) => {
  * modules: { id: string, bytes: number }[] }>} The measured bundle.
  */
 export const bundle = async (variant, engine) => {
-    // older engines import node:worker_threads in worker sources that only use it under Node; Vite
-    // stubs it out for the browser and says so once per importer
-    const logger = createLogger('warn');
-    const warn = logger.warn;
-    logger.warn = (msg, options) => {
-        if (!msg.includes('has been externalized for browser compatibility')) {
-            warn(msg, options);
-        }
-    };
-
     await build({
         configFile: false,
         root: variant.dir,
         base: './',
         logLevel: 'warn',
-        customLogger: logger,
+        customLogger: quietLogger(),
         resolve: {
             alias: engine.alias ?? {}
         },
@@ -260,9 +213,69 @@ export const bundle = async (variant, engine) => {
         }
     });
 
-    const jsFiles = listFiles(variant.outDir).filter(file => file.endsWith('.js'));
+    return measureOutput(variant.outDir, engine, variant.dir);
+};
+
+/**
+ * Bundles every export of one of a library's entry points, minified like a scenario. This is the
+ * library with nothing tree-shaken away, measured the same way as the scenarios, so that a
+ * scenario's bundle can be set against it module by module.
+ *
+ * @param {object} engine - The resolved engine.
+ * @param {string} specifier - The entry point, such as playcanvas or three/webgpu.
+ * @returns {Promise<{ size: { raw: number, gzip: number, brotli: number },
+ * modules: { id: string, bytes: number }[] }>} The measured build.
+ */
+export const bundleWholeLibrary = async (engine, specifier) => {
+    const name = `everything-${specifier.replace(/\W+/g, '-')}`;
+    const entry = path.join(engine.workDir, `${name}.js`);
+    const outDir = path.join(engine.workDir, name);
+    fs.writeFileSync(entry, `export * from '${specifier}';\n`);
+
+    await build({
+        configFile: false,
+        root: engine.workDir,
+        logLevel: 'warn',
+        customLogger: quietLogger(),
+        resolve: {
+            alias: engine.alias ?? {}
+        },
+        build: {
+            outDir,
+            emptyOutDir: true,
+            target: 'esnext',
+            minify: true,
+            sourcemap: 'hidden',
+            modulePreload: { polyfill: false },
+            reportCompressedSize: false,
+            chunkSizeWarningLimit: Infinity,
+            rolldownOptions: { input: entry, preserveEntrySignatures: 'strict' }
+        }
+    });
+
+    const { size, modules } = measureOutput(outDir, engine, specifier);
+    // what no module accounts for here is the list of exports the build ends with
+    return { size, modules: modules.map(m => (m.id === '(unmapped)' ? { ...m, id: '(export list)' } : m)) };
+};
+
+// older engines import node:worker_threads in worker sources that only use it under Node; Vite
+// stubs it out for the browser and says so once per importer
+function quietLogger() {
+    const logger = createLogger('warn');
+    const warn = logger.warn;
+    logger.warn = (msg, options) => {
+        if (!msg.includes('has been externalized for browser compatibility')) {
+            warn(msg, options);
+        }
+    };
+    return logger;
+}
+
+// sizes the JavaScript a build produced, and attributes its bytes to source modules
+function measureOutput(outDir, engine, label) {
+    const jsFiles = listFiles(outDir).filter(file => file.endsWith('.js'));
     if (!jsFiles.length) {
-        throw new Error(`Build of ${variant.dir} produced no JavaScript`);
+        throw new Error(`Build of ${label} produced no JavaScript`);
     }
 
     const size = { raw: 0, gzip: 0, brotli: 0 };
@@ -274,7 +287,7 @@ export const bundle = async (variant, engine) => {
         size.gzip += sizes.gzip;
         size.brotli += sizes.brotli;
         // file names carry a content hash, which would make every result differ
-        files.push({ file: posix(path.relative(variant.outDir, file)).replace(/-[\w-]{8}\.js$/, '.js'), ...sizes });
+        files.push({ file: posix(path.relative(outDir, file)).replace(/-[\w-]{8}\.js$/, '.js'), ...sizes });
         attribute(file, engine, totals);
         // the map has done its job, and is several times the size of the bundle
         fs.rmSync(`${file}.map`);
@@ -287,8 +300,8 @@ export const bundle = async (variant, engine) => {
 
     const attributed = modules.reduce((sum, item) => sum + item.bytes, 0);
     if (attributed !== size.raw) {
-        throw new Error(`Module breakdown of ${variant.dir} adds up to ${attributed} bytes, bundle is ${size.raw}`);
+        throw new Error(`Module breakdown of ${label} adds up to ${attributed} bytes, build is ${size.raw}`);
     }
 
     return { size, files, modules };
-};
+}

@@ -182,6 +182,13 @@ body.tm-page { height: 100vh; padding: 12px 16px; display: flex; flex-direction:
 .tm-leaf.cmp { background: var(--neutral); color: var(--text); }
 .tm-leaf.cmp span { position: relative; }
 .tm-part { position: absolute; }
+/* against the whole library: what tree-shaking removed is faded and striped, what was kept is a
+   band in the area's colour */
+.tm-leaf.whole { color: var(--text-2); background: repeating-linear-gradient(45deg, var(--neutral), var(--neutral) 4px, var(--surface) 4px, var(--surface) 8px); }
+.tm-leaf.whole span { position: relative; }
+.tm-leaf.whole.on-colour { color: #fff; }
+.tm-leaf.whole.on-colour.dark-text { color: #0b0b0b; }
+.legend i.shaken { background: repeating-linear-gradient(45deg, var(--neutral), var(--neutral) 3px, var(--surface) 3px, var(--surface) 6px); border: 1px solid var(--axis); }
 .tm-part.added { background: var(--added); }
 /* stripes as well as colour, so removed does not rely on telling red from green */
 .tm-part.removed { background: repeating-linear-gradient(45deg, var(--removed), var(--removed) 4px, var(--removed-stripe) 4px, var(--removed-stripe) 8px); }

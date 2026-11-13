@@ -58,8 +58,12 @@ A generated static site under `dist/report/`, in three levels:
 
 - A scenario's `headline` variant (in `scenario.json`) is the one the overview pages show.
 - Filters are kept in the page address, so any view can be bookmarked or shared.
-- The treemap shows the "Compare to" version. With "Colour by change" it colours every module by
-  how much it grew or shrank since the "Compare from" version.
+- The treemap shows the "To" version. Ticking the box marks, inside each module's box, what was
+  added and what was removed since the "From" version.
+- "From" can also be "Whole library (no tree-shaking)". The treemap then draws every module of
+  the library at its full size, with the part the bundle kept in colour and the part tree-shaking
+  removed faded, and the table below lists the largest modules removed, kept in part and kept
+  whole.
 - The treemap also has a page of its own, `/report/bundle-size/<scenario>/treemap/`, linked from
   the scenario page. It fills the window and can be magnified (buttons, or Ctrl + mouse wheel), so
   that more boxes have room for their names.
@@ -134,9 +138,11 @@ so the report compares them by release date and by latest release.
   `reference.png` and nearly the same shading.
 - Only documented ways of using a library are measured. A variant a library has no documented
   route for is left out, not approximated.
-- The full-library figure for PlayCanvas is its published `playcanvas.min.mjs`. three.js publishes
-  no minified build, so its figure is every export of an entry point, bundled and minified by this
-  harness.
+- The whole-library figure is every export of a library's entry point, bundled and minified by
+  this harness the same way as the scenarios, and broken down per module (`whole` in a result).
+  That makes a bundle comparable with it module by module. For PlayCanvas the published
+  `playcanvas.min.mjs` is recorded next to it; it is a little larger, as it is made with a
+  different minifier.
 - The module breakdown for three.js is coarse, because `import 'three'` resolves to a few
   pre-built files, not to individual source modules.
 

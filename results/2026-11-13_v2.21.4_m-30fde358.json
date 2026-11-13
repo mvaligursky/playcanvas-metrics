@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "timestamp": "2026-11-13T14:50:22.986Z",
+  "timestamp": "2026-11-13T16:54:30.560Z",
   "machine": "m-30fde358",
   "environment": {
     "id": "m-30fde358",
@@ -18,7 +18,7 @@
   },
   "harness": {
     "version": "0.2.0",
-    "commit": null,
+    "commit": "0423e3a96a37b3af1448167b509ea72bb3ea5d82",
     "dirty": true,
     "node": "v24.22.2",
     "vite": "8.3.3",
@@ -57,12 +57,4833 @@
     "dirty": false,
     "date": "2026-08-13T11:52:03.599Z"
   },
-  "baselineName": "playcanvas.min.mjs",
+  "baselineName": "playcanvas, all exports",
   "baseline": {
+    "playcanvas, all exports": {
+      "raw": 2325576,
+      "gzip": 591866,
+      "brotli": 460467
+    },
     "playcanvas.min.mjs": {
       "raw": 2370756,
       "gzip": 609474,
       "brotli": 474406
+    }
+  },
+  "whole": {
+    "playcanvas": {
+      "name": "playcanvas, all exports",
+      "size": {
+        "raw": 2325576,
+        "gzip": 591866,
+        "brotli": 460467
+      },
+      "modules": [
+        {
+          "id": "src/platform/graphics/webgl/webgl-graphics-device.js",
+          "bytes": 34849
+        },
+        {
+          "id": "src/framework/components/element/text-element.js",
+          "bytes": 31781
+        },
+        {
+          "id": "(export list)",
+          "bytes": 30521
+        },
+        {
+          "id": "src/framework/components/element/component.js",
+          "bytes": 24980
+        },
+        {
+          "id": "src/scene/particle-system/particle-emitter.js",
+          "bytes": 21638
+        },
+        {
+          "id": "src/framework/components/element/image-element.js",
+          "bytes": 21443
+        },
+        {
+          "id": "src/extras/renderers/wide-line-renderer.js",
+          "bytes": 19557
+        },
+        {
+          "id": "src/framework/components/particle-system/component.js",
+          "bytes": 18644
+        },
+        {
+          "id": "src/framework/parsers/glb-parser.js",
+          "bytes": 18257
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-graphics-device.js",
+          "bytes": 17220
+        },
+        {
+          "id": "src/scene/renderer/forward-renderer.js",
+          "bytes": 16802
+        },
+        {
+          "id": "src/framework/components/scroll-view/component.js",
+          "bytes": 16686
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/clusteredLight.js",
+          "bytes": 16561
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/clusteredLight.js",
+          "bytes": 15607
+        },
+        {
+          "id": "src/scene/light.js",
+          "bytes": 14651
+        },
+        {
+          "id": "src/extras/exporters/gltf-exporter.js",
+          "bytes": 14446
+        },
+        {
+          "id": "src/framework/app-base.js",
+          "bytes": 14319
+        },
+        {
+          "id": "src/framework/input/element-input.js",
+          "bytes": 13975
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-texture.js",
+          "bytes": 13734
+        },
+        {
+          "id": "src/framework/components/element/system.js",
+          "bytes": 13476
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-world.js",
+          "bytes": 13335
+        },
+        {
+          "id": "src/framework/lightmapper/lightmapper.js",
+          "bytes": 12292
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-shader-processor-wgsl.js",
+          "bytes": 12206
+        },
+        {
+          "id": "src/framework/components/button/component.js",
+          "bytes": 11824
+        },
+        {
+          "id": "src/framework/components/model/component.js",
+          "bytes": 11639
+        },
+        {
+          "id": "src/scene/camera.js",
+          "bytes": 11413
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/ltc.js",
+          "bytes": 11361
+        },
+        {
+          "id": "src/scene/renderer/renderer.js",
+          "bytes": 11019
+        },
+        {
+          "id": "src/scene/materials/standard-material.js",
+          "bytes": 10994
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-hybrid-renderer.js",
+          "bytes": 10897
+        },
+        {
+          "id": "src/framework/components/sprite/component.js",
+          "bytes": 10891
+        },
+        {
+          "id": "src/framework/components/render/component.js",
+          "bytes": 10615
+        },
+        {
+          "id": "src/framework/components/light/component.js",
+          "bytes": 10211
+        },
+        {
+          "id": "src/scene/graph-node.js",
+          "bytes": 10188
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-projector.js",
+          "bytes": 10116
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/ltc.js",
+          "bytes": 10064
+        },
+        {
+          "id": "src/scene/shader-lib/programs/lit-shader.js",
+          "bytes": 10032
+        },
+        {
+          "id": "src/scene/batching/batch-manager.js",
+          "bytes": 9955
+        },
+        {
+          "id": "src/platform/graphics/graphics-device.js",
+          "bytes": 9835
+        },
+        {
+          "id": "src/framework/anim/controller/anim-controller.js",
+          "bytes": 9647
+        },
+        {
+          "id": "src/framework/components/joint/component.js",
+          "bytes": 9495
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-octree-instance.js",
+          "bytes": 9329
+        },
+        {
+          "id": "src/scene/mesh.js",
+          "bytes": 9179
+        },
+        {
+          "id": "modules/fflate/esm/browser.js",
+          "bytes": 9107
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-shadow-renderer.js",
+          "bytes": 8963
+        },
+        {
+          "id": "src/framework/components/script/component.js",
+          "bytes": 8927
+        },
+        {
+          "id": "src/framework/components/camera/component.js",
+          "bytes": 8841
+        },
+        {
+          "id": "src/extras/mini-stats/mini-stats.js",
+          "bytes": 8707
+        },
+        {
+          "id": "src/scene/mesh-instance.js",
+          "bytes": 8658
+        },
+        {
+          "id": "src/extras/gizmo/rotate-gizmo.js",
+          "bytes": 8603
+        },
+        {
+          "id": "src/scene/materials/standard-material-options-builder.js",
+          "bytes": 8602
+        },
+        {
+          "id": "src/framework/xr/xr-manager.js",
+          "bytes": 8591
+        },
+        {
+          "id": "src/platform/graphics/texture.js",
+          "bytes": 8466
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-manager.js",
+          "bytes": 8406
+        },
+        {
+          "id": "src/platform/graphics/constants.js",
+          "bytes": 8358
+        },
+        {
+          "id": "src/framework/components/gsplat/component.js",
+          "bytes": 8292
+        },
+        {
+          "id": "src/core/math/mat4.js",
+          "bytes": 8106
+        },
+        {
+          "id": "src/scene/scene.js",
+          "bytes": 8004
+        },
+        {
+          "id": "src/scene/graphics/radix-sort/compute-radix-sort-onesweep.js",
+          "bytes": 7951
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/lightFunctionShadow.js",
+          "bytes": 7753
+        },
+        {
+          "id": "src/extras/render-passes/frame-pass-camera-frame.js",
+          "bytes": 7712
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-compose.js",
+          "bytes": 7628
+        },
+        {
+          "id": "src/platform/input/game-pads.js",
+          "bytes": 7494
+        },
+        {
+          "id": "src/platform/sound/instance.js",
+          "bytes": 7414
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/onesweep-binning.js",
+          "bytes": 7338
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/lightFunctionLight.js",
+          "bytes": 7191
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/frag/reproject.js",
+          "bytes": 7175
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-interval-compaction.js",
+          "bytes": 7147
+        },
+        {
+          "id": "src/extras/gizmo/view-cube.js",
+          "bytes": 7122
+        },
+        {
+          "id": "src/framework/components/rigid-body/system.js",
+          "bytes": 7033
+        },
+        {
+          "id": "src/framework/components/anim/component.js",
+          "bytes": 7009
+        },
+        {
+          "id": "src/scene/layer.js",
+          "bytes": 6962
+        },
+        {
+          "id": "src/framework/parsers/ply.js",
+          "bytes": 6932
+        },
+        {
+          "id": "src/extras/render-passes/frame-pass-volumetric-fog.js",
+          "bytes": 6924
+        },
+        {
+          "id": "src/framework/components/collision/system.js",
+          "bytes": 6890
+        },
+        {
+          "id": "src/framework/components/animation/component.js",
+          "bytes": 6869
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/lightFunctionShadow.js",
+          "bytes": 6843
+        },
+        {
+          "id": "src/scene/composition/layer-composition.js",
+          "bytes": 6769
+        },
+        {
+          "id": "src/extras/exporters/usdz-exporter.js",
+          "bytes": 6741
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-render-target.js",
+          "bytes": 6673
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-texture.js",
+          "bytes": 6660
+        },
+        {
+          "id": "src/extras/gizmo/gizmo.js",
+          "bytes": 6591
+        },
+        {
+          "id": "src/extras/renderers/outline-renderer.js",
+          "bytes": 6571
+        },
+        {
+          "id": "src/core/preprocessor.js",
+          "bytes": 6489
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/lightFunctionLight.js",
+          "bytes": 6458
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-params.js",
+          "bytes": 6448
+        },
+        {
+          "id": "src/extras/gizmo/transform-gizmo.js",
+          "bytes": 6359
+        },
+        {
+          "id": "src/framework/components/sound/slot.js",
+          "bytes": 6267
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-projector.js",
+          "bytes": 6252
+        },
+        {
+          "id": "src/framework/components/layout-group/layout-calculator.js",
+          "bytes": 6245
+        },
+        {
+          "id": "src/framework/components/collision/component.js",
+          "bytes": 6234
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-quad-renderer.js",
+          "bytes": 6212
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/frag/reproject.js",
+          "bytes": 6093
+        },
+        {
+          "id": "src/framework/physics/ammo/ammo-physics-world.js",
+          "bytes": 6073
+        },
+        {
+          "id": "src/extras/gizmo/translate-gizmo.js",
+          "bytes": 6051
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-sog-data.js",
+          "bytes": 6035
+        },
+        {
+          "id": "src/scene/immediate/immediate.js",
+          "bytes": 6029
+        },
+        {
+          "id": "src/scene/shader-lib/programs/standard.js",
+          "bytes": 5996
+        },
+        {
+          "id": "src/framework/components/rigid-body/component.js",
+          "bytes": 5955
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-common.js",
+          "bytes": 5856
+        },
+        {
+          "id": "src/core/math/blue-noise.js",
+          "bytes": 5831
+        },
+        {
+          "id": "src/extras/gizmo/scale-gizmo.js",
+          "bytes": 5830
+        },
+        {
+          "id": "src/core/block-allocator.js",
+          "bytes": 5741
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-forward/litForwardBackend.js",
+          "bytes": 5658
+        },
+        {
+          "id": "src/scene/renderer/shadow-renderer.js",
+          "bytes": 5561
+        },
+        {
+          "id": "src/platform/net/http.js",
+          "bytes": 5520
+        },
+        {
+          "id": "src/scene/lighting/world-clusters.js",
+          "bytes": 5504
+        },
+        {
+          "id": "src/scene/particle-system/cpu-updater.js",
+          "bytes": 5503
+        },
+        {
+          "id": "src/scene/materials/material.js",
+          "bytes": 5461
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/stdDeclaration.js",
+          "bytes": 5363
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-render-target.js",
+          "bytes": 5317
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-forward/litForwardBackend.js",
+          "bytes": 5297
+        },
+        {
+          "id": "src/framework/components/sprite/sprite-animation-clip.js",
+          "bytes": 5273
+        },
+        {
+          "id": "src/framework/handlers/basis-worker.js",
+          "bytes": 5258
+        },
+        {
+          "id": "src/deprecated/deprecated.js",
+          "bytes": 5113
+        },
+        {
+          "id": "src/framework/physics/ammo/ammo-physics-joint.js",
+          "bytes": 4979
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowPCSS.js",
+          "bytes": 4959
+        },
+        {
+          "id": "src/scene/particle-system/gpu-updater.js",
+          "bytes": 4914
+        },
+        {
+          "id": "src/framework/asset/asset-registry.js",
+          "bytes": 4898
+        },
+        {
+          "id": "src/framework/components/element/markup.js",
+          "bytes": 4897
+        },
+        {
+          "id": "src/platform/graphics/shader-processor-glsl.js",
+          "bytes": 4809
+        },
+        {
+          "id": "src/framework/parsers/json-model.js",
+          "bytes": 4741
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/onesweep-global-hist.js",
+          "bytes": 4699
+        },
+        {
+          "id": "src/scene/graphics/radix-sort/compute-radix-sort-multipass.js",
+          "bytes": 4671
+        },
+        {
+          "id": "src/framework/xr/xr-input-source.js",
+          "bytes": 4635
+        },
+        {
+          "id": "src/framework/parsers/glb-container-resource.js",
+          "bytes": 4613
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/ssao.js",
+          "bytes": 4605
+        },
+        {
+          "id": "src/extras/render-passes/camera-frame.js",
+          "bytes": 4600
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-data.js",
+          "bytes": 4497
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/ssao.js",
+          "bytes": 4467
+        },
+        {
+          "id": "src/framework/font/canvas-font.js",
+          "bytes": 4449
+        },
+        {
+          "id": "src/extras/mini-stats/render2d.js",
+          "bytes": 4430
+        },
+        {
+          "id": "src/extras/input/sources/keyboard-mouse-source.js",
+          "bytes": 4415
+        },
+        {
+          "id": "src/scene/graphics/reproject-texture.js",
+          "bytes": 4387
+        },
+        {
+          "id": "src/scene/lighting/light-texture-atlas.js",
+          "bytes": 4362
+        },
+        {
+          "id": "src/core/math/quat.js",
+          "bytes": 4328
+        },
+        {
+          "id": "src/framework/components/camera/post-effect-queue.js",
+          "bytes": 4267
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowSoft.js",
+          "bytes": 4238
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatHybrid.js",
+          "bytes": 4200
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatCorner.js",
+          "bytes": 4170
+        },
+        {
+          "id": "src/framework/components/layout-group/component.js",
+          "bytes": 4156
+        },
+        {
+          "id": "src/framework/parsers/sog-bundle.js",
+          "bytes": 4149
+        },
+        {
+          "id": "src/framework/parsers/draco-worker.js",
+          "bytes": 4080
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-format.js",
+          "bytes": 3987
+        },
+        {
+          "id": "src/core/shape/bounding-box.js",
+          "bytes": 3986
+        },
+        {
+          "id": "src/framework/xr/xr-anchors.js",
+          "bytes": 3943
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-work-buffer-render-pass.js",
+          "bytes": 3927
+        },
+        {
+          "id": "src/framework/components/scrollbar/component.js",
+          "bytes": 3922
+        },
+        {
+          "id": "src/framework/bundle/bundle-registry.js",
+          "bytes": 3889
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/stdFrontEnd.js",
+          "bytes": 3826
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/stdFrontEnd.js",
+          "bytes": 3801
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle.js",
+          "bytes": 3794
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/stdDeclaration.js",
+          "bytes": 3755
+        },
+        {
+          "id": "src/platform/graphics/render-target.js",
+          "bytes": 3747
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-info.js",
+          "bytes": 3735
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowSoft.js",
+          "bytes": 3735
+        },
+        {
+          "id": "src/framework/gsplat/gsplat-processor.js",
+          "bytes": 3728
+        },
+        {
+          "id": "src/scene/shader-lib/program-library.js",
+          "bytes": 3716
+        },
+        {
+          "id": "src/framework/components/element/element-drag-helper.js",
+          "bytes": 3696
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-shader.js",
+          "bytes": 3689
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatCorner.js",
+          "bytes": 3689
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterStart.js",
+          "bytes": 3681
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/iridescenceDiffraction.js",
+          "bytes": 3645
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-director.js",
+          "bytes": 3641
+        },
+        {
+          "id": "src/framework/entity.js",
+          "bytes": 3617
+        },
+        {
+          "id": "src/framework/asset/asset-localized.js",
+          "bytes": 3596
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-compressed-data.js",
+          "bytes": 3569
+        },
+        {
+          "id": "src/scene/sprite.js",
+          "bytes": 3569
+        },
+        {
+          "id": "src/framework/asset/asset.js",
+          "bytes": 3566
+        },
+        {
+          "id": "src/platform/graphics/shader-definition-utils.js",
+          "bytes": 3552
+        },
+        {
+          "id": "src/scene/renderer/culler.js",
+          "bytes": 3548
+        },
+        {
+          "id": "src/platform/input/controller.js",
+          "bytes": 3544
+        },
+        {
+          "id": "src/platform/graphics/uniform-buffer.js",
+          "bytes": 3538
+        },
+        {
+          "id": "src/framework/components/screen/component.js",
+          "bytes": 3500
+        },
+        {
+          "id": "src/framework/xr/xr-hand.js",
+          "bytes": 3473
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowEVSM.js",
+          "bytes": 3473
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/clusteredLightShadows.js",
+          "bytes": 3419
+        },
+        {
+          "id": "src/scene/materials/standard-material-parameters.js",
+          "bytes": 3356
+        },
+        {
+          "id": "src/framework/i18n/i18n.js",
+          "bytes": 3340
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/volumetricFog.js",
+          "bytes": 3337
+        },
+        {
+          "id": "src/framework/graphics/picker.js",
+          "bytes": 3334
+        },
+        {
+          "id": "src/scene/materials/lit-material-options-builder.js",
+          "bytes": 3318
+        },
+        {
+          "id": "src/framework/handlers/basis.js",
+          "bytes": 3317
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-xr-bridge.js",
+          "bytes": 3299
+        },
+        {
+          "id": "src/framework/handlers/cubemap.js",
+          "bytes": 3289
+        },
+        {
+          "id": "src/scene/morph-instance.js",
+          "bytes": 3273
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/iridescenceDiffraction.js",
+          "bytes": 3273
+        },
+        {
+          "id": "src/framework/xr/xr-view.js",
+          "bytes": 3239
+        },
+        {
+          "id": "src/scene/lighting/lights-buffer.js",
+          "bytes": 3227
+        },
+        {
+          "id": "src/framework/physics/ammo/ammo-physics-shape.js",
+          "bytes": 3211
+        },
+        {
+          "id": "src/framework/components/anim/component-binder.js",
+          "bytes": 3210
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-clip.js",
+          "bytes": 3184
+        },
+        {
+          "id": "src/extras/input/sources/dual-gesture-source.js",
+          "bytes": 3174
+        },
+        {
+          "id": "src/framework/components/sprite/system.js",
+          "bytes": 3169
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplat.js",
+          "bytes": 3148
+        },
+        {
+          "id": "src/framework/components/sound/component.js",
+          "bytes": 3139
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-xr-bridge.js",
+          "bytes": 3134
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-resource.js",
+          "bytes": 3131
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-sort-worker.js",
+          "bytes": 3129
+        },
+        {
+          "id": "src/framework/handlers/texture-atlas.js",
+          "bytes": 3125
+        },
+        {
+          "id": "src/extras/renderers/wide-line.js",
+          "bytes": 3121
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-shader.js",
+          "bytes": 3120
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-octree.js",
+          "bytes": 3094
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-work-buffer.js",
+          "bytes": 3083
+        },
+        {
+          "id": "src/scene/morph.js",
+          "bytes": 3083
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/compute-radix-sort-reorder.js",
+          "bytes": 3079
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-unified-sort-worker.js",
+          "bytes": 3070
+        },
+        {
+          "id": "src/scene/animation/skeleton.js",
+          "bytes": 3049
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_cpu.js",
+          "bytes": 3035
+        },
+        {
+          "id": "src/framework/parsers/glb/gltf-accessor.js",
+          "bytes": 3031
+        },
+        {
+          "id": "src/core/math/vec3.js",
+          "bytes": 3029
+        },
+        {
+          "id": "src/framework/stats.js",
+          "bytes": 3027
+        },
+        {
+          "id": "src/platform/input/keyboard.js",
+          "bytes": 3009
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-render-pipeline.js",
+          "bytes": 3008
+        },
+        {
+          "id": "src/scene/renderer/shadow-renderer-directional.js",
+          "bytes": 2979
+        },
+        {
+          "id": "src/framework/handlers/material.js",
+          "bytes": 2975
+        },
+        {
+          "id": "src/scene/renderer/render-pass-forward.js",
+          "bytes": 2974
+        },
+        {
+          "id": "src/core/math/vec4.js",
+          "bytes": 2973
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-resource-base.js",
+          "bytes": 2970
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-instance.js",
+          "bytes": 2962
+        },
+        {
+          "id": "src/platform/input/mouse.js",
+          "bytes": 2961
+        },
+        {
+          "id": "src/framework/script/script-attributes.js",
+          "bytes": 2950
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowEVSM.js",
+          "bytes": 2947
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/clusteredLightShadows.js",
+          "bytes": 2922
+        },
+        {
+          "id": "src/framework/anim/binder/default-anim-binder.js",
+          "bytes": 2919
+        },
+        {
+          "id": "src/framework/xr/xr-input.js",
+          "bytes": 2918
+        },
+        {
+          "id": "src/scene/graphics/prefix-sum-kernel.js",
+          "bytes": 2873
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/collections/shader-chunks-wgsl.js",
+          "bytes": 2810
+        },
+        {
+          "id": "src/framework/handlers/loader.js",
+          "bytes": 2806
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/skybox/frag/skybox.js",
+          "bytes": 2787
+        },
+        {
+          "id": "src/framework/parsers/sog.js",
+          "bytes": 2785
+        },
+        {
+          "id": "src/platform/graphics/vertex-iterator.js",
+          "bytes": 2773
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/volumetricFog.js",
+          "bytes": 2749
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-world-state.js",
+          "bytes": 2744
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterStart.js",
+          "bytes": 2719
+        },
+        {
+          "id": "src/framework/physics/ammo/ammo-physics-body.js",
+          "bytes": 2712
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowPCF5.js",
+          "bytes": 2677
+        },
+        {
+          "id": "src/framework/components/script/system.js",
+          "bytes": 2656
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-evaluator.js",
+          "bytes": 2650
+        },
+        {
+          "id": "src/framework/components/anim/component-layer.js",
+          "bytes": 2639
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/msdf.js",
+          "bytes": 2636
+        },
+        {
+          "id": "src/framework/scene-registry.js",
+          "bytes": 2634
+        },
+        {
+          "id": "src/framework/parsers/draco-decoder.js",
+          "bytes": 2623
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/refractionDynamic.js",
+          "bytes": 2605
+        },
+        {
+          "id": "src/framework/handlers/texture.js",
+          "bytes": 2597
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/litMain.js",
+          "bytes": 2594
+        },
+        {
+          "id": "src/scene/constants.js",
+          "bytes": 2593
+        },
+        {
+          "id": "src/framework/xr/xr-hit-test.js",
+          "bytes": 2586
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-ssao.js",
+          "bytes": 2585
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle.js",
+          "bytes": 2580
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/taaResolve.js",
+          "bytes": 2577
+        },
+        {
+          "id": "src/core/math/vec2.js",
+          "bytes": 2575
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/downsample.js",
+          "bytes": 2574
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/collections/shader-chunks-glsl.js",
+          "bytes": 2564
+        },
+        {
+          "id": "src/extras/input/sources/multi-touch-source.js",
+          "bytes": 2563
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/compute-prefix-sum.js",
+          "bytes": 2554
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatCopyToWorkbuffer.js",
+          "bytes": 2516
+        },
+        {
+          "id": "src/framework/components/particle-system/system.js",
+          "bytes": 2473
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplat.js",
+          "bytes": 2462
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/webgpu.js",
+          "bytes": 2457
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/refractionDynamic.js",
+          "bytes": 2455
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/lightDeclaration.js",
+          "bytes": 2405
+        },
+        {
+          "id": "src/platform/graphics/bind-group.js",
+          "bytes": 2395
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_cpu.js",
+          "bytes": 2391
+        },
+        {
+          "id": "src/scene/renderer/render-pass-cookie-renderer.js",
+          "bytes": 2374
+        },
+        {
+          "id": "src/scene/graphics/env-lighting.js",
+          "bytes": 2338
+        },
+        {
+          "id": "src/extras/input/sources/single-gesture-source.js",
+          "bytes": 2336
+        },
+        {
+          "id": "src/core/event-handler.js",
+          "bytes": 2332
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatWorkBufferGeometry.js",
+          "bytes": 2320
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lightmapper/frag/bilateralDeNoise.js",
+          "bytes": 2312
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-shadow-cull.js",
+          "bytes": 2311
+        },
+        {
+          "id": "src/framework/components/gsplat/gsplat-asset-loader.js",
+          "bytes": 2309
+        },
+        {
+          "id": "src/scene/skybox/sky.js",
+          "bytes": 2297
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-sog-resource.js",
+          "bytes": 2292
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/uncompressedSH.js",
+          "bytes": 2288
+        },
+        {
+          "id": "src/core/math/mat3.js",
+          "bytes": 2243
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-taa.js",
+          "bytes": 2241
+        },
+        {
+          "id": "src/framework/components/screen/system.js",
+          "bytes": 2240
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-upload-stream.js",
+          "bytes": 2239
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-frustum-culler.js",
+          "bytes": 2232
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-varyings.js",
+          "bytes": 2222
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-interval-cull.js",
+          "bytes": 2220
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-mipmap-renderer.js",
+          "bytes": 2214
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatWorkBufferGeometry.js",
+          "bytes": 2209
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowPCF3.js",
+          "bytes": 2205
+        },
+        {
+          "id": "src/framework/asset/asset-list-loader.js",
+          "bytes": 2195
+        },
+        {
+          "id": "src/framework/lightmapper/lightmap-filters.js",
+          "bytes": 2190
+        },
+        {
+          "id": "src/extras/gizmo/shape/arrow-shape.js",
+          "bytes": 2189
+        },
+        {
+          "id": "src/extras/render-passes/frame-pass-dof.js",
+          "bytes": 2188
+        },
+        {
+          "id": "src/framework/xr/xr-light-estimation.js",
+          "bytes": 2187
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-unified-sorter.js",
+          "bytes": 2187
+        },
+        {
+          "id": "src/extras/gizmo/shape/boxline-shape.js",
+          "bytes": 2178
+        },
+        {
+          "id": "src/framework/asset/asset-reference.js",
+          "bytes": 2175
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/skybox/frag/skybox.js",
+          "bytes": 2175
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-color-enhance.js",
+          "bytes": 2162
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-target-value.js",
+          "bytes": 2153
+        },
+        {
+          "id": "src/extras/gizmo/shape/shape.js",
+          "bytes": 2144
+        },
+        {
+          "id": "src/platform/graphics/render-pass.js",
+          "bytes": 2142
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-placement.js",
+          "bytes": 2142
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatCopyToWorkbuffer.js",
+          "bytes": 2117
+        },
+        {
+          "id": "src/framework/xr/xr-views.js",
+          "bytes": 2114
+        },
+        {
+          "id": "src/framework/components/anim/system.js",
+          "bytes": 2082
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatCenter.js",
+          "bytes": 2071
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/taaResolve.js",
+          "bytes": 2064
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/sog.js",
+          "bytes": 2063
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatCenter.js",
+          "bytes": 2053
+        },
+        {
+          "id": "src/scene/geometry/cone-base-geometry.js",
+          "bytes": 2038
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-color-enhance.js",
+          "bytes": 2034
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-color-lut.js",
+          "bytes": 2030
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/compressed.js",
+          "bytes": 2028
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/lightDeclaration.js",
+          "bytes": 2026
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/gles3.js",
+          "bytes": 2019
+        },
+        {
+          "id": "src/framework/parsers/material/json-standard-material.js",
+          "bytes": 2017
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/litMain.js",
+          "bytes": 2011
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-resolver.js",
+          "bytes": 2002
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose.js",
+          "bytes": 1992
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatEvalSH.js",
+          "bytes": 1976
+        },
+        {
+          "id": "src/platform/graphics/blend-state.js",
+          "bytes": 1973
+        },
+        {
+          "id": "src/scene/lighting/lighting-params.js",
+          "bytes": 1973
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowPCF5.js",
+          "bytes": 1968
+        },
+        {
+          "id": "src/framework/anim/controller/anim-state.js",
+          "bytes": 1958
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-xr-msaa-copy.js",
+          "bytes": 1955
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplat.js",
+          "bytes": 1951
+        },
+        {
+          "id": "src/scene/shader-lib/programs/shader-generator-shader.js",
+          "bytes": 1940
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-gpu-profiler.js",
+          "bytes": 1937
+        },
+        {
+          "id": "src/framework/script/script.js",
+          "bytes": 1926
+        },
+        {
+          "id": "src/framework/graphics/render-pass-picker.js",
+          "bytes": 1918
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowPCF3.js",
+          "bytes": 1913
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-project-common.js",
+          "bytes": 1904
+        },
+        {
+          "id": "src/core/math/color.js",
+          "bytes": 1891
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-tile-intersect.js",
+          "bytes": 1884
+        },
+        {
+          "id": "src/framework/script/script-registry.js",
+          "bytes": 1879
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/dofBlur.js",
+          "bytes": 1871
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lightmapper/frag/bilateralDeNoise.js",
+          "bytes": 1859
+        },
+        {
+          "id": "src/extras/render-passes/frame-pass-bloom.js",
+          "bytes": 1854
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-forward/litForwardPostCode.js",
+          "bytes": 1853
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-forward/litForwardPostCode.js",
+          "bytes": 1847
+        },
+        {
+          "id": "src/extras/gizmo/shape/arc-shape.js",
+          "bytes": 1834
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/sog.js",
+          "bytes": 1818
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose.js",
+          "bytes": 1803
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/transform.js",
+          "bytes": 1774
+        },
+        {
+          "id": "src/scene/frame-graph.js",
+          "bytes": 1770
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/compressed.js",
+          "bytes": 1765
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/compute-radix-sort-4bit.js",
+          "bytes": 1764
+        },
+        {
+          "id": "src/platform/graphics/bind-group-format.js",
+          "bytes": 1762
+        },
+        {
+          "id": "src/scene/geometry/geometry-utils.js",
+          "bytes": 1761
+        },
+        {
+          "id": "src/framework/components/layout-group/system.js",
+          "bytes": 1760
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/msdf.js",
+          "bytes": 1759
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplat.js",
+          "bytes": 1749
+        },
+        {
+          "id": "src/platform/graphics/vertex-format.js",
+          "bytes": 1742
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatEvalSH.js",
+          "bytes": 1736
+        },
+        {
+          "id": "src/core/math/curve-evaluator.js",
+          "bytes": 1732
+        },
+        {
+          "id": "src/extras/input/pose.js",
+          "bytes": 1729
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-prepass.js",
+          "bytes": 1722
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-gaussian-splatting.js",
+          "bytes": 1722
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionEnv.js",
+          "bytes": 1718
+        },
+        {
+          "id": "src/framework/xr/xr-image-tracking.js",
+          "bytes": 1710
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-sorter.js",
+          "bytes": 1709
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-dof-blur.js",
+          "bytes": 1708
+        },
+        {
+          "id": "src/scene/materials/standard-material-validator.js",
+          "bytes": 1708
+        },
+        {
+          "id": "src/extras/input/controllers/orbit-controller.js",
+          "bytes": 1706
+        },
+        {
+          "id": "src/scene/shader-lib/shader-utils.js",
+          "bytes": 1701
+        },
+        {
+          "id": "src/platform/graphics/null/null-graphics-device.js",
+          "bytes": 1699
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-color-lut.js",
+          "bytes": 1695
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-clear-renderer.js",
+          "bytes": 1687
+        },
+        {
+          "id": "src/extras/exporters/core-exporter.js",
+          "bytes": 1681
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/transformCore.js",
+          "bytes": 1680
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/screenDepth.js",
+          "bytes": 1675
+        },
+        {
+          "id": "src/framework/handlers/sprite.js",
+          "bytes": 1674
+        },
+        {
+          "id": "src/framework/handlers/untar.js",
+          "bytes": 1668
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/radix-sort/onesweep-scan.js",
+          "bytes": 1665
+        },
+        {
+          "id": "src/framework/components/model/system.js",
+          "bytes": 1662
+        },
+        {
+          "id": "src/scene/camera-shader-params.js",
+          "bytes": 1656
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/sampleCatmullRom.js",
+          "bytes": 1647
+        },
+        {
+          "id": "src/extras/mini-stats/graph.js",
+          "bytes": 1633
+        },
+        {
+          "id": "src/platform/sound/manager.js",
+          "bytes": 1633
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/downsample.js",
+          "bytes": 1625
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/depthAwareBlur.js",
+          "bytes": 1617
+        },
+        {
+          "id": "src/framework/parsers/texture/img.js",
+          "bytes": 1613
+        },
+        {
+          "id": "src/core/tags.js",
+          "bytes": 1611
+        },
+        {
+          "id": "src/scene/graphics/frame-pass-depth-grab.js",
+          "bytes": 1606
+        },
+        {
+          "id": "src/extras/gizmo/shaders.js",
+          "bytes": 1603
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/screenDepth.js",
+          "bytes": 1599
+        },
+        {
+          "id": "src/framework/components/system.js",
+          "bytes": 1593
+        },
+        {
+          "id": "src/scene/skin-instance.js",
+          "bytes": 1592
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/clusteredLightUtils.js",
+          "bytes": 1586
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/upsample.js",
+          "bytes": 1583
+        },
+        {
+          "id": "src/core/wasm-module.js",
+          "bytes": 1579
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightSpecularAnisoGGX.js",
+          "bytes": 1579
+        },
+        {
+          "id": "src/framework/components/gsplat/system.js",
+          "bytes": 1578
+        },
+        {
+          "id": "src/framework/parsers/texture/ktx2.js",
+          "bytes": 1577
+        },
+        {
+          "id": "src/scene/model.js",
+          "bytes": 1566
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/transform.js",
+          "bytes": 1535
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/TBN.js",
+          "bytes": 1528
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/transformCore.js",
+          "bytes": 1527
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-bind-group-format.js",
+          "bytes": 1525
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-write-indirect-args.js",
+          "bytes": 1525
+        },
+        {
+          "id": "src/framework/xr/xr-anchor.js",
+          "bytes": 1524
+        },
+        {
+          "id": "src/extras/mini-stats/word-atlas.js",
+          "bytes": 1522
+        },
+        {
+          "id": "src/core/shape/frustum.js",
+          "bytes": 1514
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/cookie.js",
+          "bytes": 1503
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/formats/containerCompactWrite.js",
+          "bytes": 1499
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-query-set.js",
+          "bytes": 1490
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle-shader.js",
+          "bytes": 1489
+        },
+        {
+          "id": "src/platform/sound/instance3d.js",
+          "bytes": 1485
+        },
+        {
+          "id": "src/scene/graphics/frame-pass-color-grab.js",
+          "bytes": 1481
+        },
+        {
+          "id": "src/scene/shader-lib/programs/particle.js",
+          "bytes": 1478
+        },
+        {
+          "id": "src/framework/handlers/script.js",
+          "bytes": 1476
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/formats/containerCompactWrite.js",
+          "bytes": 1476
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-cas.js",
+          "bytes": 1476
+        },
+        {
+          "id": "src/platform/graphics/uniform-buffer-format.js",
+          "bytes": 1463
+        },
+        {
+          "id": "src/platform/graphics/xr-bridge.js",
+          "bytes": 1459
+        },
+        {
+          "id": "src/scene/renderer/shadow-renderer-local.js",
+          "bytes": 1458
+        },
+        {
+          "id": "src/framework/parsers/texture/hdr.js",
+          "bytes": 1455
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/compressedSH.js",
+          "bytes": 1455
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightSpecularAnisoGGX.js",
+          "bytes": 1449
+        },
+        {
+          "id": "src/core/string.js",
+          "bytes": 1448
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lightmapper/frag/dilate.js",
+          "bytes": 1444
+        },
+        {
+          "id": "src/framework/xr/xr-hit-test-source.js",
+          "bytes": 1442
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionEnv.js",
+          "bytes": 1435
+        },
+        {
+          "id": "src/framework/components/camera/system.js",
+          "bytes": 1434
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/skybox/vert/skybox.js",
+          "bytes": 1421
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/TBN.js",
+          "bytes": 1420
+        },
+        {
+          "id": "src/core/tags-cache.js",
+          "bytes": 1415
+        },
+        {
+          "id": "src/framework/handlers/font.js",
+          "bytes": 1413
+        },
+        {
+          "id": "src/framework/parsers/texture/ktx.js",
+          "bytes": 1404
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-compressed-resource.js",
+          "bytes": 1403
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/lighting.js",
+          "bytes": 1403
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle-shader.js",
+          "bytes": 1402
+        },
+        {
+          "id": "src/scene/renderer/shadow-map.js",
+          "bytes": 1397
+        },
+        {
+          "id": "src/framework/xr/xr-plane-detection.js",
+          "bytes": 1396
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/depthAwareBlur.js",
+          "bytes": 1396
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-streams.js",
+          "bytes": 1387
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/dofBlur.js",
+          "bytes": 1387
+        },
+        {
+          "id": "src/framework/xr/xr-joint.js",
+          "bytes": 1383
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_init.js",
+          "bytes": 1383
+        },
+        {
+          "id": "src/core/math/curve-set.js",
+          "bytes": 1379
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-upload-stream.js",
+          "bytes": 1378
+        },
+        {
+          "id": "src/platform/graphics/transform-feedback.js",
+          "bytes": 1374
+        },
+        {
+          "id": "src/platform/input/touch-device.js",
+          "bytes": 1374
+        },
+        {
+          "id": "src/core/platform.js",
+          "bytes": 1371
+        },
+        {
+          "id": "src/framework/handlers/handler.js",
+          "bytes": 1361
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-forward/litForwardDeclaration.js",
+          "bytes": 1358
+        },
+        {
+          "id": "src/platform/graphics/index-buffer.js",
+          "bytes": 1356
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_init.js",
+          "bytes": 1355
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/lighting.js",
+          "bytes": 1350
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-lights-punctual.js",
+          "bytes": 1346
+        },
+        {
+          "id": "src/framework/xr/xr-mesh-detection.js",
+          "bytes": 1341
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-downsample.js",
+          "bytes": 1340
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/skin.js",
+          "bytes": 1338
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-dof.js",
+          "bytes": 1335
+        },
+        {
+          "id": "src/platform/graphics/stencil-parameters.js",
+          "bytes": 1330
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/ambient.js",
+          "bytes": 1326
+        },
+        {
+          "id": "src/framework/components/sound/system.js",
+          "bytes": 1324
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/clusteredLightUtils.js",
+          "bytes": 1319
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-cache.js",
+          "bytes": 1304
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/sampleCatmullRom.js",
+          "bytes": 1298
+        },
+        {
+          "id": "src/scene/shader-lib/programs/lit-shader-options.js",
+          "bytes": 1296
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-compute.js",
+          "bytes": 1294
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/uncompressedSH.js",
+          "bytes": 1293
+        },
+        {
+          "id": "src/platform/graphics/webgpu/constants.js",
+          "bytes": 1290
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/sogSH.js",
+          "bytes": 1289
+        },
+        {
+          "id": "src/framework/components/joint/system.js",
+          "bytes": 1282
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-shadow/litShadowMain.js",
+          "bytes": 1282
+        },
+        {
+          "id": "src/scene/materials/shader-material.js",
+          "bytes": 1277
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowCascades.js",
+          "bytes": 1277
+        },
+        {
+          "id": "src/platform/graphics/gpu-profiler.js",
+          "bytes": 1275
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/normalCore.js",
+          "bytes": 1272
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/compressedSH.js",
+          "bytes": 1251
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerCompactRead.js",
+          "bytes": 1247
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerCompactRead.js",
+          "bytes": 1241
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/skin.js",
+          "bytes": 1238
+        },
+        {
+          "id": "src/platform/graphics/shader.js",
+          "bytes": 1237
+        },
+        {
+          "id": "src/core/uri.js",
+          "bytes": 1235
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-draco-mesh-compression.js",
+          "bytes": 1233
+        },
+        {
+          "id": "src/framework/parsers/texture/dds.js",
+          "bytes": 1223
+        },
+        {
+          "id": "src/framework/components/render/system.js",
+          "bytes": 1219
+        },
+        {
+          "id": "src/framework/parsers/scene.js",
+          "bytes": 1216
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-cas.js",
+          "bytes": 1206
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/volumetricFogCombine.js",
+          "bytes": 1205
+        },
+        {
+          "id": "src/core/path.js",
+          "bytes": 1201
+        },
+        {
+          "id": "src/framework/anim/controller/anim-blend-tree.js",
+          "bytes": 1197
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightmapAdd.js",
+          "bytes": 1195
+        },
+        {
+          "id": "src/scene/renderer/world-clusters-allocator.js",
+          "bytes": 1190
+        },
+        {
+          "id": "src/platform/graphics/dynamic-buffers.js",
+          "bytes": 1186
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerPackedRead.js",
+          "bytes": 1177
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-sort-bin-weights.js",
+          "bytes": 1174
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/normalMap.js",
+          "bytes": 1153
+        },
+        {
+          "id": "src/scene/geometry/box-geometry.js",
+          "bytes": 1149
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatCopyInstancedQuad.js",
+          "bytes": 1133
+        },
+        {
+          "id": "src/scene/render-view.js",
+          "bytes": 1125
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/ambient.js",
+          "bytes": 1124
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionEnvHQ.js",
+          "bytes": 1123
+        },
+        {
+          "id": "src/framework/i18n/utils.js",
+          "bytes": 1121
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowCascades.js",
+          "bytes": 1121
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-interval-scatter.js",
+          "bytes": 1120
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerPackedRead.js",
+          "bytes": 1109
+        },
+        {
+          "id": "src/extras/input/input.js",
+          "bytes": 1103
+        },
+        {
+          "id": "src/framework/anim/controller/anim-blend-tree-2d-directional.js",
+          "bytes": 1100
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-dof.js",
+          "bytes": 1099
+        },
+        {
+          "id": "src/scene/skybox/sky-mesh.js",
+          "bytes": 1095
+        },
+        {
+          "id": "src/framework/components/layout-child/component.js",
+          "bytes": 1089
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightmapAdd.js",
+          "bytes": 1088
+        },
+        {
+          "id": "src/framework/lightmapper/bake-light.js",
+          "bytes": 1084
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-bind-group.js",
+          "bytes": 1084
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-shadow/litShadowMain.js",
+          "bytes": 1080
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/skybox/vert/skybox.js",
+          "bytes": 1077
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/clusteredLightCookies.js",
+          "bytes": 1075
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/fog.js",
+          "bytes": 1071
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle-shader.js",
+          "bytes": 1064
+        },
+        {
+          "id": "src/scene/graphics/radix-sort/compute-radix-sort-base.js",
+          "bytes": 1062
+        },
+        {
+          "id": "src/scene/graphics/quad-render.js",
+          "bytes": 1059
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterInit.js",
+          "bytes": 1054
+        },
+        {
+          "id": "src/framework/parsers/json-animation.js",
+          "bytes": 1053
+        },
+        {
+          "id": "src/framework/graphics/primitive-cache.js",
+          "bytes": 1046
+        },
+        {
+          "id": "src/platform/graphics/depth-state.js",
+          "bytes": 1044
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-forward/litForwardDeclaration.js",
+          "bytes": 1043
+        },
+        {
+          "id": "src/core/math/curve.js",
+          "bytes": 1039
+        },
+        {
+          "id": "src/core/math/math.js",
+          "bytes": 1034
+        },
+        {
+          "id": "src/scene/renderer/light-camera.js",
+          "bytes": 1031
+        },
+        {
+          "id": "src/extras/input/controllers/focus-controller.js",
+          "bytes": 1028
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-projector-write-indirect-args.js",
+          "bytes": 1023
+        },
+        {
+          "id": "src/extras/input/controllers/fly-controller.js",
+          "bytes": 1018
+        },
+        {
+          "id": "src/framework/components/light/system.js",
+          "bytes": 1017
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/normalCore.js",
+          "bytes": 1013
+        },
+        {
+          "id": "src/extras/mini-stats/cpu-timer.js",
+          "bytes": 1006
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterInit.js",
+          "bytes": 1006
+        },
+        {
+          "id": "src/platform/graphics/compute.js",
+          "bytes": 1004
+        },
+        {
+          "id": "src/framework/components/collision/trigger.js",
+          "bytes": 1003
+        },
+        {
+          "id": "src/scene/immediate/immediate-batch.js",
+          "bytes": 1003
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/encode.js",
+          "bytes": 995
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-budget-balancer.js",
+          "bytes": 994
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightSpecularGGX.js",
+          "bytes": 990
+        },
+        {
+          "id": "src/scene/materials/lit-material.js",
+          "bytes": 983
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/fog.js",
+          "bytes": 980
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-forward/litForwardMain.js",
+          "bytes": 980
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/opacity-dither.js",
+          "bytes": 970
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/aoSpecOcc.js",
+          "bytes": 966
+        },
+        {
+          "id": "src/framework/components/scroll-view/system.js",
+          "bytes": 965
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatPacking.js",
+          "bytes": 963
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/normalMap.js",
+          "bytes": 962
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lightmapper/frag/bakeLmEnd.js",
+          "bytes": 961
+        },
+        {
+          "id": "src/extras/gizmo/mesh-line.js",
+          "bytes": 960
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-container.js",
+          "bytes": 955
+        },
+        {
+          "id": "src/core/shape/oriented-box.js",
+          "bytes": 954
+        },
+        {
+          "id": "src/scene/particle-system/particle-material.js",
+          "bytes": 954
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/diffuse.js",
+          "bytes": 951
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/encode.js",
+          "bytes": 949
+        },
+        {
+          "id": "src/framework/xr/xr-plane.js",
+          "bytes": 947
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle-shader.js",
+          "bytes": 945
+        },
+        {
+          "id": "src/framework/anim/controller/anim-node.js",
+          "bytes": 942
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-pbr-specular-glossiness.js",
+          "bytes": 941
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-depth-aware-blur.js",
+          "bytes": 940
+        },
+        {
+          "id": "src/framework/xr/xr-tracked-image.js",
+          "bytes": 937
+        },
+        {
+          "id": "src/platform/input/mouse-event.js",
+          "bytes": 937
+        },
+        {
+          "id": "src/core/read-stream.js",
+          "bytes": 936
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/upsample.js",
+          "bytes": 935
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle.js",
+          "bytes": 932
+        },
+        {
+          "id": "src/framework/components/component.js",
+          "bytes": 930
+        },
+        {
+          "id": "src/platform/input/constants.js",
+          "bytes": 929
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/decode.js",
+          "bytes": 928
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/clusteredLightCookies.js",
+          "bytes": 924
+        },
+        {
+          "id": "src/framework/components/animation/system.js",
+          "bytes": 923
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lightmapper/frag/dilate.js",
+          "bytes": 923
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightSpecularGGX.js",
+          "bytes": 923
+        },
+        {
+          "id": "src/framework/components/button/system.js",
+          "bytes": 922
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/ao.js",
+          "bytes": 921
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/msdf.js",
+          "bytes": 918
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/anisotropy.js",
+          "bytes": 916
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatCopyInstancedQuad.js",
+          "bytes": 912
+        },
+        {
+          "id": "src/scene/shader-lib/programs/lit.js",
+          "bytes": 911
+        },
+        {
+          "id": "src/framework/anim/state-graph/anim-state-graph.js",
+          "bytes": 910
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/volumetricFogCombine.js",
+          "bytes": 909
+        },
+        {
+          "id": "src/scene/skin-instance-cache.js",
+          "bytes": 906
+        },
+        {
+          "id": "src/framework/script/script-create.js",
+          "bytes": 905
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/decode.js",
+          "bytes": 905
+        },
+        {
+          "id": "src/framework/components/layout-child/system.js",
+          "bytes": 904
+        },
+        {
+          "id": "src/scene/area-light-luts.js",
+          "bytes": 904
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/combine.js",
+          "bytes": 904
+        },
+        {
+          "id": "src/scene/shader-pass.js",
+          "bytes": 903
+        },
+        {
+          "id": "src/framework/application.js",
+          "bytes": 899
+        },
+        {
+          "id": "src/platform/graphics/vertex-buffer.js",
+          "bytes": 897
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/litShaderArgs.js",
+          "bytes": 895
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatCommon.js",
+          "bytes": 889
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionEnvHQ.js",
+          "bytes": 888
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/aoSpecOcc.js",
+          "bytes": 877
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-vertex-buffer-layout.js",
+          "bytes": 876
+        },
+        {
+          "id": "src/framework/anim/controller/anim-blend-tree-2d-cartesian.js",
+          "bytes": 874
+        },
+        {
+          "id": "src/framework/xr/xr-mesh.js",
+          "bytes": 873
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-forward/litForwardMain.js",
+          "bytes": 872
+        },
+        {
+          "id": "src/extras/gizmo/shape/plane-shape.js",
+          "bytes": 868
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterAABB.js",
+          "bytes": 859
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/opacity-dither.js",
+          "bytes": 851
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/collections/particle-chunks-glsl.js",
+          "bytes": 848
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/collections/particle-chunks-wgsl.js",
+          "bytes": 848
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-renderer.js",
+          "bytes": 844
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflDirAniso.js",
+          "bytes": 841
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/lightmap.js",
+          "bytes": 841
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-dynamic-buffers.js",
+          "bytes": 827
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionSphere.js",
+          "bytes": 827
+        },
+        {
+          "id": "src/framework/script/script-type.js",
+          "bytes": 826
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/anisotropy.js",
+          "bytes": 826
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/pick.js",
+          "bytes": 824
+        },
+        {
+          "id": "src/framework/i18n/i18n-parser.js",
+          "bytes": 820
+        },
+        {
+          "id": "src/platform/graphics/storage-buffer.js",
+          "bytes": 820
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatCommon.js",
+          "bytes": 812
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/diffuse.js",
+          "bytes": 808
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/combine.js",
+          "bytes": 806
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/refractionCube.js",
+          "bytes": 806
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/ao.js",
+          "bytes": 804
+        },
+        {
+          "id": "src/core/shape/plane.js",
+          "bytes": 800
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatSource.js",
+          "bytes": 793
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-coc.js",
+          "bytes": 789
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatSogCenters.js",
+          "bytes": 788
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-blend.js",
+          "bytes": 786
+        },
+        {
+          "id": "src/scene/graphics/radix-sort/compute-radix-sort.js",
+          "bytes": 786
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightSheen.js",
+          "bytes": 786
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/fresnelSchlick.js",
+          "bytes": 784
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-iridescence.js",
+          "bytes": 780
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/debug-output.js",
+          "bytes": 779
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflDirAniso.js",
+          "bytes": 778
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/comp/sort-indirect-args.js",
+          "bytes": 778
+        },
+        {
+          "id": "src/core/sorted-loop-array.js",
+          "bytes": 777
+        },
+        {
+          "id": "src/framework/anim/controller/anim-blend-tree-1d.js",
+          "bytes": 775
+        },
+        {
+          "id": "src/scene/graphics/fisheye-projection.js",
+          "bytes": 774
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/morph/frag/morph.js",
+          "bytes": 772
+        },
+        {
+          "id": "src/scene/shader-lib/shader-chunk-map.js",
+          "bytes": 772
+        },
+        {
+          "id": "src/scene/renderer/frame-pass-multi-view.js",
+          "bytes": 770
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/refractionCube.js",
+          "bytes": 770
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/blurVSM.js",
+          "bytes": 767
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/cubeMapProject.js",
+          "bytes": 765
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/debug-output.js",
+          "bytes": 763
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatPacking.js",
+          "bytes": 763
+        },
+        {
+          "id": "src/framework/handlers/model.js",
+          "bytes": 761
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/morph/frag/morph.js",
+          "bytes": 759
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particleAnimTex.js",
+          "bytes": 753
+        },
+        {
+          "id": "src/scene/batching/batch.js",
+          "bytes": 751
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/specularityFactor.js",
+          "bytes": 750
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/pick.js",
+          "bytes": 749
+        },
+        {
+          "id": "src/scene/geometry/torus-geometry.js",
+          "bytes": 743
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/fresnelSchlick.js",
+          "bytes": 743
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-target.js",
+          "bytes": 737
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterAABB.js",
+          "bytes": 732
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemapping.js",
+          "bytes": 731
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightSheen.js",
+          "bytes": 730
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterSphere.js",
+          "bytes": 724
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/iridescenceThickness.js",
+          "bytes": 722
+        },
+        {
+          "id": "src/framework/lightmapper/bake-light-ambient.js",
+          "bytes": 719
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-compute-pipeline.js",
+          "bytes": 717
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-buffer.js",
+          "bytes": 716
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-clearcoat.js",
+          "bytes": 710
+        },
+        {
+          "id": "src/platform/sound/listener.js",
+          "bytes": 707
+        },
+        {
+          "id": "src/scene/geometry/circle-geometry.js",
+          "bytes": 707
+        },
+        {
+          "id": "src/framework/handlers/render.js",
+          "bytes": 706
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-track.js",
+          "bytes": 705
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/coc.js",
+          "bytes": 703
+        },
+        {
+          "id": "src/framework/font/font.js",
+          "bytes": 702
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-grading.js",
+          "bytes": 702
+        },
+        {
+          "id": "src/extras/render-passes/render-pass-upsample.js",
+          "bytes": 701
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingAces2.js",
+          "bytes": 700
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/gamma.js",
+          "bytes": 699
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-shader-processor-glsl.js",
+          "bytes": 695
+        },
+        {
+          "id": "src/platform/graphics/texture-utils.js",
+          "bytes": 689
+        },
+        {
+          "id": "src/core/shape/tri.js",
+          "bytes": 687
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/msdf.js",
+          "bytes": 682
+        },
+        {
+          "id": "src/extras/input/sources/gamepad-source.js",
+          "bytes": 680
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-specular.js",
+          "bytes": 677
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lightmapper/frag/bakeLmEnd.js",
+          "bytes": 677
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/float-as-uint.js",
+          "bytes": 676
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/ext-mesh-gpu-instancing.js",
+          "bytes": 668
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-vignette.js",
+          "bytes": 667
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lightmapper/frag/bakeDirLmEnd.js",
+          "bytes": 666
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/float-as-uint.js",
+          "bytes": 664
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/lightmap.js",
+          "bytes": 663
+        },
+        {
+          "id": "src/framework/components/zone/component.js",
+          "bytes": 659
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/sogSH.js",
+          "bytes": 659
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/specular.js",
+          "bytes": 658
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-draw-commands.js",
+          "bytes": 656
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle.js",
+          "bytes": 655
+        },
+        {
+          "id": "src/scene/renderer/frame-pass-update-clustered.js",
+          "bytes": 653
+        },
+        {
+          "id": "src/framework/anim/controller/anim-transition.js",
+          "bytes": 651
+        },
+        {
+          "id": "src/scene/texture-atlas.js",
+          "bytes": 650
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/cubeMapProject.js",
+          "bytes": 646
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatProcess.js",
+          "bytes": 637
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/gloss.js",
+          "bytes": 635
+        },
+        {
+          "id": "src/framework/components/registry.js",
+          "bytes": 633
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/specularityFactor.js",
+          "bytes": 632
+        },
+        {
+          "id": "src/core/math/random.js",
+          "bytes": 630
+        },
+        {
+          "id": "src/scene/compress/decompress.js",
+          "bytes": 629
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/iridescenceThickness.js",
+          "bytes": 628
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/clearCoatGloss.js",
+          "bytes": 627
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/formats/containerPackedWrite.js",
+          "bytes": 626
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-sheen.js",
+          "bytes": 624
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/sheenGloss.js",
+          "bytes": 623
+        },
+        {
+          "id": "src/platform/input/touch-event.js",
+          "bytes": 619
+        },
+        {
+          "id": "src/framework/parsers/audio.js",
+          "bytes": 611
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/skinBatch.js",
+          "bytes": 611
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/gamma.js",
+          "bytes": 610
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/envAtlas.js",
+          "bytes": 609
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatSogCenters.js",
+          "bytes": 605
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatQuatToMat3.js",
+          "bytes": 605
+        },
+        {
+          "id": "src/extras/gizmo/tri-data.js",
+          "bytes": 604
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/shared-wgsl.js",
+          "bytes": 604
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-vignette.js",
+          "bytes": 603
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/litShaderArgs.js",
+          "bytes": 603
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionSheen.js",
+          "bytes": 602
+        },
+        {
+          "id": "src/platform/graphics/shader-processor-options.js",
+          "bytes": 599
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/detailModes.js",
+          "bytes": 599
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/uv0.js",
+          "bytes": 598
+        },
+        {
+          "id": "src/platform/graphics/graphics-device-create.js",
+          "bytes": 597
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/compute-gsplat-shadow-indirect-args.js",
+          "bytes": 597
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/transmission.js",
+          "bytes": 597
+        },
+        {
+          "id": "src/framework/components/scrollbar/system.js",
+          "bytes": 596
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingAces2.js",
+          "bytes": 593
+        },
+        {
+          "id": "src/framework/parsers/texture/basis.js",
+          "bytes": 592
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/metalness.js",
+          "bytes": 592
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionSphere.js",
+          "bytes": 589
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingNeutral.js",
+          "bytes": 589
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatOutput.js",
+          "bytes": 586
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-grading.js",
+          "bytes": 585
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/litMain.js",
+          "bytes": 583
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/litMain.js",
+          "bytes": 579
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-dynamic-buffers.js",
+          "bytes": 578
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatOutput.js",
+          "bytes": 578
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemapping.js",
+          "bytes": 576
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-gpu-profiler.js",
+          "bytes": 575
+        },
+        {
+          "id": "src/scene/geometry/sphere-geometry.js",
+          "bytes": 575
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterSphere.js",
+          "bytes": 574
+        },
+        {
+          "id": "src/scene/shader-lib/shader-chunks.js",
+          "bytes": 572
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/vert/webgpu.js",
+          "bytes": 571
+        },
+        {
+          "id": "src/core/shape/bounding-sphere.js",
+          "bytes": 570
+        },
+        {
+          "id": "src/platform/graphics/frame-pass.js",
+          "bytes": 570
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/coc.js",
+          "bytes": 570
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingNeutral.js",
+          "bytes": 566
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/skinBatch.js",
+          "bytes": 563
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/thickness.js",
+          "bytes": 559
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/envAtlas.js",
+          "bytes": 558
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/falloffInvSquared.js",
+          "bytes": 553
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/specular.js",
+          "bytes": 547
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatQuatToMat3.js",
+          "bytes": 545
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/uncompressed.js",
+          "bytes": 542
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/clearCoatNormal.js",
+          "bytes": 542
+        },
+        {
+          "id": "src/scene/morph-target.js",
+          "bytes": 541
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/emissive.js",
+          "bytes": 541
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/blurVSM.js",
+          "bytes": 540
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/shadowPCF1.js",
+          "bytes": 540
+        },
+        {
+          "id": "src/extras/input/sources/virtual-joystick.js",
+          "bytes": 538
+        },
+        {
+          "id": "src/framework/physics/physics-world.js",
+          "bytes": 538
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/clearCoatGloss.js",
+          "bytes": 535
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/sheenGloss.js",
+          "bytes": 532
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/detailModes.js",
+          "bytes": 528
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/gloss.js",
+          "bytes": 528
+        },
+        {
+          "id": "src/framework/anim/controller/anim-blend-tree-direct.js",
+          "bytes": 526
+        },
+        {
+          "id": "src/core/indexed-list.js",
+          "bytes": 524
+        },
+        {
+          "id": "src/framework/components/audio-listener/system.js",
+          "bytes": 524
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lightmapper/frag/bakeDirLmEnd.js",
+          "bytes": 523
+        },
+        {
+          "id": "src/framework/handlers/bundle.js",
+          "bytes": 522
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/startNineSlicedTiled.js",
+          "bytes": 522
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/linearizeDepth.js",
+          "bytes": 519
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/transmission.js",
+          "bytes": 514
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-placement-state-tracker.js",
+          "bytes": 507
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/falloffInvSquared.js",
+          "bytes": 506
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionCube.js",
+          "bytes": 506
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/uv0.js",
+          "bytes": 505
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/iridescence.js",
+          "bytes": 504
+        },
+        {
+          "id": "src/framework/xr/xr-dom-overlay.js",
+          "bytes": 502
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-other/litOtherMain.js",
+          "bytes": 502
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionSheen.js",
+          "bytes": 500
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatSource.js",
+          "bytes": 499
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-shader-input.js",
+          "bytes": 498
+        },
+        {
+          "id": "src/scene/graphics/post-effect.js",
+          "bytes": 498
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatProcess.js",
+          "bytes": 497
+        },
+        {
+          "id": "src/scene/graphics/render-pass-shader-quad.js",
+          "bytes": 496
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/metalness.js",
+          "bytes": 496
+        },
+        {
+          "id": "src/framework/anim/binder/anim-binder.js",
+          "bytes": 495
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/collections/gsplat-chunks-wgsl.js",
+          "bytes": 495
+        },
+        {
+          "id": "src/scene/compress/compress-utils.js",
+          "bytes": 494
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particleAnimTex.js",
+          "bytes": 491
+        },
+        {
+          "id": "src/scene/renderer/render-pass-shadow-local-clustered.js",
+          "bytes": 489
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/linearizeDepth.js",
+          "bytes": 488
+        },
+        {
+          "id": "src/framework/components/zone/system.js",
+          "bytes": 487
+        },
+        {
+          "id": "src/framework/parsers/glb-container-parser.js",
+          "bytes": 485
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-unlit.js",
+          "bytes": 484
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/sheen.js",
+          "bytes": 478
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-buffer.js",
+          "bytes": 477
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/shadowPCF1.js",
+          "bytes": 477
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-dynamic-buffer.js",
+          "bytes": 476
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingFilmic.js",
+          "bytes": 476
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/parallax.js",
+          "bytes": 476
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/collections/gsplat-chunks-glsl.js",
+          "bytes": 475
+        },
+        {
+          "id": "src/platform/graphics/draw-commands.js",
+          "bytes": 474
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleInput.js",
+          "bytes": 472
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/clearCoatNormal.js",
+          "bytes": 470
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/clearCoat.js",
+          "bytes": 470
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/thickness.js",
+          "bytes": 469
+        },
+        {
+          "id": "src/scene/geometry/plane-geometry.js",
+          "bytes": 466
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/uncompressed.js",
+          "bytes": 466
+        },
+        {
+          "id": "src/scene/batching/skin-batch-instance.js",
+          "bytes": 464
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle-simulation.js",
+          "bytes": 464
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle-simulation.js",
+          "bytes": 464
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_stretch.js",
+          "bytes": 464
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-volume.js",
+          "bytes": 462
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/emissive.js",
+          "bytes": 462
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/opacity.js",
+          "bytes": 462
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-octree.resource.js",
+          "bytes": 457
+        },
+        {
+          "id": "src/framework/parsers/glb-animation.js",
+          "bytes": 455
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-ssao.js",
+          "bytes": 450
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/bayer.js",
+          "bytes": 449
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/startNineSlicedTiled.js",
+          "bytes": 447
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightSpecularBlinn.js",
+          "bytes": 444
+        },
+        {
+          "id": "src/scene/renderer/layer-render-step.js",
+          "bytes": 443
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleInput.js",
+          "bytes": 443
+        },
+        {
+          "id": "src/scene/composition/render-action.js",
+          "bytes": 442
+        },
+        {
+          "id": "src/scene/renderer/shadow-map-cache.js",
+          "bytes": 442
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-interval-data.js",
+          "bytes": 439
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/frag/cookie-blit-cube.js",
+          "bytes": 439
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-fringing.js",
+          "bytes": 439
+        },
+        {
+          "id": "src/core/ref-counted-key-cache.js",
+          "bytes": 435
+        },
+        {
+          "id": "src/extras/gizmo/shape/sphere-shape.js",
+          "bytes": 434
+        },
+        {
+          "id": "src/framework/lightmapper/bake-light-simple.js",
+          "bytes": 434
+        },
+        {
+          "id": "src/framework/script/constants.js",
+          "bytes": 432
+        },
+        {
+          "id": "src/core/constants.js",
+          "bytes": 431
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingFilmic.js",
+          "bytes": 430
+        },
+        {
+          "id": "src/framework/physics/physics-body.js",
+          "bytes": 427
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingHejl.js",
+          "bytes": 427
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_TBN.js",
+          "bytes": 427
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatStructs.js",
+          "bytes": 424
+        },
+        {
+          "id": "src/framework/components/rigid-body/single-contact-result.js",
+          "bytes": 423
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-dynamic-buffer.js",
+          "bytes": 422
+        },
+        {
+          "id": "src/framework/parsers/glb-model.js",
+          "bytes": 419
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/iridescence.js",
+          "bytes": 419
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/vert/immediateLine.js",
+          "bytes": 417
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatStructs.js",
+          "bytes": 412
+        },
+        {
+          "id": "src/framework/parsers/anim-clip.js",
+          "bytes": 410
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightSpecularBlinn.js",
+          "bytes": 410
+        },
+        {
+          "id": "src/scene/graphics/light-cube.js",
+          "bytes": 409
+        },
+        {
+          "id": "src/framework/parsers/gsplat-octree.js",
+          "bytes": 407
+        },
+        {
+          "id": "src/platform/graphics/upload-stream.js",
+          "bytes": 407
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-draw-commands.js",
+          "bytes": 407
+        },
+        {
+          "id": "src/core/event-handle.js",
+          "bytes": 405
+        },
+        {
+          "id": "src/extras/mini-stats/stats-timer.js",
+          "bytes": 403
+        },
+        {
+          "id": "src/scene/render.js",
+          "bytes": 402
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/parallax.js",
+          "bytes": 402
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/shared/fogMath.js",
+          "bytes": 402
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-other/litOtherMain.js",
+          "bytes": 400
+        },
+        {
+          "id": "src/platform/graphics/built-in-textures.js",
+          "bytes": 399
+        },
+        {
+          "id": "src/core/math/float-packing.js",
+          "bytes": 398
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/sheen.js",
+          "bytes": 397
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-variants.js",
+          "bytes": 395
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/half-types.js",
+          "bytes": 393
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionCube.js",
+          "bytes": 392
+        },
+        {
+          "id": "src/scene/renderer/render-pass-shadow-directional.js",
+          "bytes": 391
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/opacity.js",
+          "bytes": 391
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-hybrid-renderer-scratch.js",
+          "bytes": 388
+        },
+        {
+          "id": "src/framework/anim/controller/constants.js",
+          "bytes": 387
+        },
+        {
+          "id": "src/scene/renderer/render-pass-shadow-local-non-clustered.js",
+          "bytes": 383
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/clearCoat.js",
+          "bytes": 382
+        },
+        {
+          "id": "src/extras/gizmo/shape/box-shape.js",
+          "bytes": 381
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/formats/containerPackedWrite.js",
+          "bytes": 380
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/pass-forward/litForwardPreCode.js",
+          "bytes": 379
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/bayer.js",
+          "bytes": 378
+        },
+        {
+          "id": "src/framework/bundle/bundle.js",
+          "bytes": 375
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/pass-forward/litForwardPreCode.js",
+          "bytes": 375
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/vert/reproject.js",
+          "bytes": 368
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-ssao.js",
+          "bytes": 363
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-texture-transform.js",
+          "bytes": 359
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_mesh.js",
+          "bytes": 352
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/render-pass/frag/compose/compose-bloom.js",
+          "bytes": 352
+        },
+        {
+          "id": "src/framework/xr/constants.js",
+          "bytes": 351
+        },
+        {
+          "id": "src/scene/materials/standard-material-options.js",
+          "bytes": 351
+        },
+        {
+          "id": "src/scene/shader-lib/chunk-utils.js",
+          "bytes": 351
+        },
+        {
+          "id": "src/scene/skybox/sky-geometry.js",
+          "bytes": 351
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/spherical.js",
+          "bytes": 347
+        },
+        {
+          "id": "src/scene/animation/animation.js",
+          "bytes": 343
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-fringing.js",
+          "bytes": 339
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/metalnessModulate.js",
+          "bytes": 339
+        },
+        {
+          "id": "src/framework/lightmapper/render-pass-lightmapper.js",
+          "bytes": 338
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/index.js",
+          "bytes": 338
+        },
+        {
+          "id": "src/framework/components/audio-listener/component.js",
+          "bytes": 336
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/outputAlpha.js",
+          "bytes": 336
+        },
+        {
+          "id": "src/core/object-pool.js",
+          "bytes": 335
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-anisotropy.js",
+          "bytes": 334
+        },
+        {
+          "id": "src/framework/template.js",
+          "bytes": 334
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingHejl.js",
+          "bytes": 334
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/metalnessModulate.js",
+          "bytes": 334
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/vert/gles3.js",
+          "bytes": 333
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/vert/cookie-blit.js",
+          "bytes": 332
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_normalMap.js",
+          "bytes": 330
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-octree-node.js",
+          "bytes": 323
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatComputeStreamDecl.js",
+          "bytes": 322
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/end.js",
+          "bytes": 311
+        },
+        {
+          "id": "src/scene/gsplat/gsplat-resource-cleanup.js",
+          "bytes": 307
+        },
+        {
+          "id": "src/platform/graphics/dynamic-buffer.js",
+          "bytes": 304
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-snapshot.js",
+          "bytes": 303
+        },
+        {
+          "id": "src/framework/handlers/template.js",
+          "bytes": 302
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/end.js",
+          "bytes": 301
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_stretch.js",
+          "bytes": 301
+        },
+        {
+          "id": "src/scene/batching/batch-group.js",
+          "bytes": 299
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/frag/cookie-blit-2d.js",
+          "bytes": 295
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/morph/vert/morph.js",
+          "bytes": 295
+        },
+        {
+          "id": "src/framework/handlers/scene.js",
+          "bytes": 294
+        },
+        {
+          "id": "src/framework/handlers/container.js",
+          "bytes": 293
+        },
+        {
+          "id": "src/scene/graphics/quad-render-utils.js",
+          "bytes": 293
+        },
+        {
+          "id": "src/core/shape/ray.js",
+          "bytes": 292
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_wrap.js",
+          "bytes": 291
+        },
+        {
+          "id": "src/framework/lightmapper/bake-mesh-node.js",
+          "bytes": 290
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatStreamDecl.js",
+          "bytes": 290
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-transmission.js",
+          "bytes": 289
+        },
+        {
+          "id": "src/extras/input/utils.js",
+          "bytes": 288
+        },
+        {
+          "id": "src/framework/asset/asset-file.js",
+          "bytes": 288
+        },
+        {
+          "id": "src/scene/geometry/dome-geometry.js",
+          "bytes": 287
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/fullscreenQuad.js",
+          "bytes": 286
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_cpu_end.js",
+          "bytes": 286
+        },
+        {
+          "id": "src/scene/shader-lib/programs/lit-options-utils.js",
+          "bytes": 284
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/quad.js",
+          "bytes": 284
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/outputAlpha.js",
+          "bytes": 283
+        },
+        {
+          "id": "src/scene/graphics/noise-textures.js",
+          "bytes": 281
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_lighting.js",
+          "bytes": 280
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/vert/transformInstancing.js",
+          "bytes": 274
+        },
+        {
+          "id": "src/framework/handlers/scene-utils.js",
+          "bytes": 272
+        },
+        {
+          "id": "src/core/ref-counted-cache.js",
+          "bytes": 271
+        },
+        {
+          "id": "src/platform/graphics/device-cache.js",
+          "bytes": 270
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-index-buffer.js",
+          "bytes": 270
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/vert/immediateLine.js",
+          "bytes": 270
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatModify.js",
+          "bytes": 269
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/spherical.js",
+          "bytes": 267
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/outputTex2D.js",
+          "bytes": 267
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_end.js",
+          "bytes": 267
+        },
+        {
+          "id": "src/platform/graphics/texture-view.js",
+          "bytes": 262
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/internal/frag/immediateLine.js",
+          "bytes": 261
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/comp/indirect-core.js",
+          "bytes": 258
+        },
+        {
+          "id": "src/framework/asset/constants.js",
+          "bytes": 255
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatStreamDecl.js",
+          "bytes": 255
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/frag/cookie-blit-cube.js",
+          "bytes": 253
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/render-pass/frag/compose/compose-bloom.js",
+          "bytes": 253
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/base.js",
+          "bytes": 252
+        },
+        {
+          "id": "src/core/math/kernel.js",
+          "bytes": 250
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/spot.js",
+          "bytes": 250
+        },
+        {
+          "id": "src/scene/immediate/immediate-batches.js",
+          "bytes": 249
+        },
+        {
+          "id": "src/scene/geometry/cone-geometry.js",
+          "bytes": 248
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleOutput.js",
+          "bytes": 248
+        },
+        {
+          "id": "src/extras/mini-stats/gpu-timer.js",
+          "bytes": 247
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/transformInstancing.js",
+          "bytes": 246
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerSimpleRead.js",
+          "bytes": 244
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/shared.js",
+          "bytes": 243
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/spot.js",
+          "bytes": 242
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingAces.js",
+          "bytes": 241
+        },
+        {
+          "id": "src/framework/xr/xr-finger.js",
+          "bytes": 240
+        },
+        {
+          "id": "src/scene/geometry/geometry.js",
+          "bytes": 240
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/collections/compose-chunks-glsl.js",
+          "bytes": 240
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/collections/compose-chunks-wgsl.js",
+          "bytes": 240
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-curve.js",
+          "bytes": 239
+        },
+        {
+          "id": "src/framework/parsers/anim-state-graph.js",
+          "bytes": 237
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerRead.js",
+          "bytes": 237
+        },
+        {
+          "id": "src/platform/graphics/scope-space.js",
+          "bytes": 236
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_cpu_end.js",
+          "bytes": 232
+        },
+        {
+          "id": "src/framework/handlers/hierarchy.js",
+          "bytes": 230
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_wrap.js",
+          "bytes": 229
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatHelpers.js",
+          "bytes": 229
+        },
+        {
+          "id": "src/framework/components/rigid-body/contact-point.js",
+          "bytes": 228
+        },
+        {
+          "id": "src/framework/parsers/template.js",
+          "bytes": 228
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterRespawn.js",
+          "bytes": 228
+        },
+        {
+          "id": "src/framework/components/rigid-body/constants.js",
+          "bytes": 227
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerFloatRead.js",
+          "bytes": 227
+        },
+        {
+          "id": "src/scene/geometry/cylinder-geometry.js",
+          "bytes": 226
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/base.js",
+          "bytes": 226
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_TBN.js",
+          "bytes": 226
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/envProc.js",
+          "bytes": 226
+        },
+        {
+          "id": "src/framework/parsers/binary.js",
+          "bytes": 224
+        },
+        {
+          "id": "src/scene/geometry/capsule-geometry.js",
+          "bytes": 224
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/vert/reproject.js",
+          "bytes": 224
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/cubeMapRotate.js",
+          "bytes": 224
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/normal.js",
+          "bytes": 224
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatModify.js",
+          "bytes": 221
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_end.js",
+          "bytes": 219
+        },
+        {
+          "id": "src/framework/parsers/text.js",
+          "bytes": 216
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/vert/cookie-blit.js",
+          "bytes": 216
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatComputeSplat.js",
+          "bytes": 216
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-bind-group.js",
+          "bytes": 215
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerSimpleRead.js",
+          "bytes": 214
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/baseNineSlicedTiled.js",
+          "bytes": 211
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/comp/dispatch-core.js",
+          "bytes": 210
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatSplat.js",
+          "bytes": 210
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerRead.js",
+          "bytes": 209
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatHelpers.js",
+          "bytes": 209
+        },
+        {
+          "id": "src/core/hash.js",
+          "bytes": 207
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-vertex-buffer.js",
+          "bytes": 206
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/baseNineSlicedTiled.js",
+          "bytes": 206
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_lighting.js",
+          "bytes": 205
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/envProc.js",
+          "bytes": 204
+        },
+        {
+          "id": "src/platform/graphics/version.js",
+          "bytes": 203
+        },
+        {
+          "id": "src/extras/gizmo/color.js",
+          "bytes": 200
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/uvTransform.js",
+          "bytes": 200
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_customFace.js",
+          "bytes": 200
+        },
+        {
+          "id": "src/scene/graphics/render-pass-quad.js",
+          "bytes": 199
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerFloatRead.js",
+          "bytes": 199
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/cubeMapRotate.js",
+          "bytes": 199
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/debug-process-frontend.js",
+          "bytes": 199
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_billboard.js",
+          "bytes": 199
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-pipeline.js",
+          "bytes": 197
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingAces.js",
+          "bytes": 195
+        },
+        {
+          "id": "src/framework/parsers/json.js",
+          "bytes": 193
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/ior.js",
+          "bytes": 192
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/normal.js",
+          "bytes": 191
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/baseNineSliced.js",
+          "bytes": 188
+        },
+        {
+          "id": "src/framework/app-options.js",
+          "bytes": 187
+        },
+        {
+          "id": "src/framework/handlers/json.js",
+          "bytes": 185
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/debug-process-frontend.js",
+          "bytes": 185
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/baseNineSliced.js",
+          "bytes": 183
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_soft.js",
+          "bytes": 183
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/ior.js",
+          "bytes": 182
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_mesh.js",
+          "bytes": 179
+        },
+        {
+          "id": "src/platform/graphics/scope-id.js",
+          "bytes": 176
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/formats/containerDecl.js",
+          "bytes": 176
+        },
+        {
+          "id": "src/framework/handlers/shader.js",
+          "bytes": 175
+        },
+        {
+          "id": "src/framework/scene-registry-item.js",
+          "bytes": 174
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-index-buffer.js",
+          "bytes": 174
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/uvTransform.js",
+          "bytes": 174
+        },
+        {
+          "id": "src/framework/handlers/html.js",
+          "bytes": 173
+        },
+        {
+          "id": "src/framework/handlers/text.js",
+          "bytes": 173
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatSplat.js",
+          "bytes": 173
+        },
+        {
+          "id": "src/framework/handlers/css.js",
+          "bytes": 172
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/quad.js",
+          "bytes": 169
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/morph/vert/morph.js",
+          "bytes": 166
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_normalMap.js",
+          "bytes": 166
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_halflambert.js",
+          "bytes": 164
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/vert/fullscreenQuad.js",
+          "bytes": 162
+        },
+        {
+          "id": "src/framework/handlers/gsplat.js",
+          "bytes": 159
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_soft.js",
+          "bytes": 159
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleOutput.js",
+          "bytes": 159
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/falloffLinear.js",
+          "bytes": 158
+        },
+        {
+          "id": "src/platform/graphics/null/null-dynamic-buffers.js",
+          "bytes": 155
+        },
+        {
+          "id": "src/framework/handlers/animation.js",
+          "bytes": 154
+        },
+        {
+          "id": "src/framework/i18n/constants.js",
+          "bytes": 152
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particleAnimFrameLoop.js",
+          "bytes": 150
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-utils.js",
+          "bytes": 149
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflectionCC.js",
+          "bytes": 149
+        },
+        {
+          "id": "src/core/guid.js",
+          "bytes": 148
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterRespawn.js",
+          "bytes": 148
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingDeclVS.js",
+          "bytes": 148
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/frag/immediateLine.js",
+          "bytes": 147
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/falloffLinear.js",
+          "bytes": 146
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/litShaderCore.js",
+          "bytes": 146
+        },
+        {
+          "id": "src/core/math/bit-packing.js",
+          "bytes": 145
+        },
+        {
+          "id": "src/scene/graphics/lightmap-cache.js",
+          "bytes": 145
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightDiffuseLambert.js",
+          "bytes": 145
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_blendAdd.js",
+          "bytes": 144
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/reflDir.js",
+          "bytes": 143
+        },
+        {
+          "id": "src/framework/physics/physics-joint.js",
+          "bytes": 142
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterNoRespawn.js",
+          "bytes": 142
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particleAnimFrameClamp.js",
+          "bytes": 142
+        },
+        {
+          "id": "src/scene/renderer/frame-pass-postprocessing.js",
+          "bytes": 140
+        },
+        {
+          "id": "src/core/core.js",
+          "bytes": 137
+        },
+        {
+          "id": "src/core/map-utils.js",
+          "bytes": 135
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflDir.js",
+          "bytes": 134
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/reflectionCC.js",
+          "bytes": 132
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightDiffuseLambert.js",
+          "bytes": 131
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_blendAdd.js",
+          "bytes": 131
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-data.js",
+          "bytes": 130
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_halflambert.js",
+          "bytes": 130
+        },
+        {
+          "id": "src/framework/handlers/scene-settings.js",
+          "bytes": 129
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_end.js",
+          "bytes": 125
+        },
+        {
+          "id": "src/core/tracing.js",
+          "bytes": 124
+        },
+        {
+          "id": "src/framework/components/rigid-body/raycast-result.js",
+          "bytes": 124
+        },
+        {
+          "id": "src/core/ref-counted-object.js",
+          "bytes": 122
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/internal/frag/cookie-blit-2d.js",
+          "bytes": 122
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-vertex-buffer.js",
+          "bytes": 121
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lighting/lightEvaluation.js",
+          "bytes": 121
+        },
+        {
+          "id": "src/platform/input/keyboard-event.js",
+          "bytes": 120
+        },
+        {
+          "id": "src/framework/anim/evaluator/anim-events.js",
+          "bytes": 119
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/outline-output.js",
+          "bytes": 118
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lighting/lightEvaluation.js",
+          "bytes": 117
+        },
+        {
+          "id": "src/platform/graphics/versioned-object.js",
+          "bytes": 116
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/formats/containerDecl.js",
+          "bytes": 116
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particleAnimFrameLoop.js",
+          "bytes": 115
+        },
+        {
+          "id": "src/scene/shader-lib/programs/shader-generator.js",
+          "bytes": 114
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatStreamOutput.js",
+          "bytes": 112
+        },
+        {
+          "id": "src/core/array-utils.js",
+          "bytes": 110
+        },
+        {
+          "id": "src/core/string-ids.js",
+          "bytes": 110
+        },
+        {
+          "id": "src/platform/graphics/webgpu/webgpu-uniform-buffer.js",
+          "bytes": 110
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/outputTex2D.js",
+          "bytes": 109
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterNoRespawn.js",
+          "bytes": 109
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particleAnimFrameClamp.js",
+          "bytes": 109
+        },
+        {
+          "id": "src/core/time.js",
+          "bytes": 108
+        },
+        {
+          "id": "src/framework/handlers/binary.js",
+          "bytes": 108
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_end.js",
+          "bytes": 108
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingDeclPS.js",
+          "bytes": 108
+        },
+        {
+          "id": "src/platform/sound/sound.js",
+          "bytes": 106
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatStreamOutput.js",
+          "bytes": 106
+        },
+        {
+          "id": "src/framework/handlers/audio.js",
+          "bytes": 105
+        },
+        {
+          "id": "src/core/set-utils.js",
+          "bytes": 104
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-uniform-buffer.js",
+          "bytes": 104
+        },
+        {
+          "id": "src/framework/parsers/texture/texture.js",
+          "bytes": 101
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingDeclCS.js",
+          "bytes": 100
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_lambert.js",
+          "bytes": 100
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/alphaTest.js",
+          "bytes": 100
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_customFace.js",
+          "bytes": 99
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/varyings/gsplatVaryingDeclVS.js",
+          "bytes": 98
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_billboard.js",
+          "bytes": 98
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/texture-source.js",
+          "bytes": 97
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-emissive-strength.js",
+          "bytes": 92
+        },
+        {
+          "id": "src/framework/components/joint/constants.js",
+          "bytes": 89
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_lambert.js",
+          "bytes": 88
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_blendMultiply.js",
+          "bytes": 88
+        },
+        {
+          "id": "src/platform/graphics/multi-sampled-texture-cache.js",
+          "bytes": 87
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/varyings/gsplatVaryingDeclPS.js",
+          "bytes": 87
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/outline-output.js",
+          "bytes": 87
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/lightDirPoint.js",
+          "bytes": 87
+        },
+        {
+          "id": "src/extras/gizmo/constants.js",
+          "bytes": 86
+        },
+        {
+          "id": "src/framework/handlers/anim-state-graph.js",
+          "bytes": 86
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/standard/frag/alphaTest.js",
+          "bytes": 85
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_blendMultiply.js",
+          "bytes": 84
+        },
+        {
+          "id": "src/scene/skin.js",
+          "bytes": 84
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/viewDir.js",
+          "bytes": 83
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/uvTransformUniforms.js",
+          "bytes": 81
+        },
+        {
+          "id": "src/framework/handlers/anim-clip.js",
+          "bytes": 80
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/twoSidedLighting.js",
+          "bytes": 80
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/twoSidedLighting.js",
+          "bytes": 79
+        },
+        {
+          "id": "src/framework/handlers/folder.js",
+          "bytes": 78
+        },
+        {
+          "id": "src/platform/graphics/null/null-texture.js",
+          "bytes": 77
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/viewDir.js",
+          "bytes": 77
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/uvTransformUniforms.js",
+          "bytes": 77
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_normal.js",
+          "bytes": 76
+        },
+        {
+          "id": "src/scene/materials/default-material.js",
+          "bytes": 75
+        },
+        {
+          "id": "src/scene/shader-lib/get-program-library.js",
+          "bytes": 75
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/frag/gsplatModify.js",
+          "bytes": 75
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/aoDiffuseOcc.js",
+          "bytes": 75
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/lightDirPoint.js",
+          "bytes": 74
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-dispersion.js",
+          "bytes": 73
+        },
+        {
+          "id": "src/framework/components/rigid-body/contact-result.js",
+          "bytes": 72
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingLinear.js",
+          "bytes": 72
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_localShift.js",
+          "bytes": 71
+        },
+        {
+          "id": "src/framework/components/element/constants.js",
+          "bytes": 69
+        },
+        {
+          "id": "src/framework/script.js",
+          "bytes": 68
+        },
+        {
+          "id": "src/scene/materials/lit-material-options.js",
+          "bytes": 68
+        },
+        {
+          "id": "src/platform/graphics/null/null-render-target.js",
+          "bytes": 67
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/outline-declaration.js",
+          "bytes": 67
+        },
+        {
+          "id": "src/framework/parsers/glb/extensions/khr-materials-ior.js",
+          "bytes": 66
+        },
+        {
+          "id": "src/framework/constants.js",
+          "bytes": 65
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/frag/gsplatModify.js",
+          "bytes": 64
+        },
+        {
+          "id": "src/scene/fog-params.js",
+          "bytes": 63
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingLinear.js",
+          "bytes": 63
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_localShift.js",
+          "bytes": 63
+        },
+        {
+          "id": "src/framework/script/script-types.js",
+          "bytes": 62
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_normal.js",
+          "bytes": 62
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/standard/frag/litShaderCore.js",
+          "bytes": 62
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/outline-declaration.js",
+          "bytes": 61
+        },
+        {
+          "id": "src/platform/graphics/null/null-shader.js",
+          "bytes": 59
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/aoDiffuseOcc.js",
+          "bytes": 59
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-asset-loader-base.js",
+          "bytes": 58
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/common/frag/tonemapping/tonemappingNone.js",
+          "bytes": 56
+        },
+        {
+          "id": "src/core/secure-context-warning.js",
+          "bytes": 54
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/vert/uv1.js",
+          "bytes": 54
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterOnStop.js",
+          "bytes": 52
+        },
+        {
+          "id": "src/core/numeric-ids.js",
+          "bytes": 51
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particleUpdaterEnd.js",
+          "bytes": 50
+        },
+        {
+          "id": "src/core/sort.js",
+          "bytes": 49
+        },
+        {
+          "id": "src/platform/graphics/null/null-uniform-buffer.js",
+          "bytes": 49
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/startNineSliced.js",
+          "bytes": 48
+        },
+        {
+          "id": "src/framework/globals.js",
+          "bytes": 47
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/common/frag/tonemapping/tonemappingNone.js",
+          "bytes": 47
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/startNineSliced.js",
+          "bytes": 47
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/vert/uv1.js",
+          "bytes": 47
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_pointAlong.js",
+          "bytes": 47
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_pointAlong.js",
+          "bytes": 46
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/vert/particle_soft.js",
+          "bytes": 46
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterOnStop.js",
+          "bytes": 44
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingCacheWriteCS.js",
+          "bytes": 44
+        },
+        {
+          "id": "src/platform/sound/constants.js",
+          "bytes": 42
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingFlushVS.js",
+          "bytes": 42
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/vert/particle_soft.js",
+          "bytes": 39
+        },
+        {
+          "id": "src/extras/render-passes/constants.js",
+          "bytes": 37
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/varyings/gsplatVaryingCacheReadVS.js",
+          "bytes": 37
+        },
+        {
+          "id": "src/platform/graphics/null/null-vertex-buffer.js",
+          "bytes": 34
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/gsplat/vert/gsplatFormat.js",
+          "bytes": 34
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/gsplat/vert/gsplatFormat.js",
+          "bytes": 34
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/particle/frag/particle_blendNormal.js",
+          "bytes": 34
+        },
+        {
+          "id": "src/platform/graphics/null/null-bind-group.js",
+          "bytes": 33
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/vert/webgpu-wgsl.js",
+          "bytes": 28
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particle_blendNormal.js",
+          "bytes": 27
+        },
+        {
+          "id": "src/framework/components/sprite/constants.js",
+          "bytes": 26
+        },
+        {
+          "id": "src/framework/components/scroll-view/constants.js",
+          "bytes": 25
+        },
+        {
+          "id": "src/platform/graphics/null/null-draw-commands.js",
+          "bytes": 25
+        },
+        {
+          "id": "src/extras/input/math.js",
+          "bytes": 23
+        },
+        {
+          "id": "src/framework/font/constants.js",
+          "bytes": 22
+        },
+        {
+          "id": "src/platform/graphics/null/null-bind-group-format.js",
+          "bytes": 22
+        },
+        {
+          "id": "src/platform/graphics/null/null-index-buffer.js",
+          "bytes": 22
+        },
+        {
+          "id": "src/platform/graphics/webgl/webgl-bind-group-format.js",
+          "bytes": 22
+        },
+        {
+          "id": "src/framework/components/screen/constants.js",
+          "bytes": 21
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/particle/frag/particleUpdaterEnd.js",
+          "bytes": 21
+        },
+        {
+          "id": "src/core/math/constants.js",
+          "bytes": 20
+        },
+        {
+          "id": "src/framework/components/layout-group/constants.js",
+          "bytes": 20
+        },
+        {
+          "id": "src/framework/anim/constants.js",
+          "bytes": 19
+        },
+        {
+          "id": "__vite-browser-external",
+          "bytes": 12
+        },
+        {
+          "id": "src/framework/components/button/constants.js",
+          "bytes": 10
+        },
+        {
+          "id": "src/scene/gsplat-unified/gsplat-alloc-id.js",
+          "bytes": 10
+        },
+        {
+          "id": "src/scene/picker-id.js",
+          "bytes": 10
+        },
+        {
+          "id": "src/scene/gsplat-unified/constants.js",
+          "bytes": 9
+        },
+        {
+          "id": "src/platform/graphics/shader-chunks/frag/webgpu-wgsl.js",
+          "bytes": 6
+        },
+        {
+          "id": "src/scene/shader-lib/glsl/chunks/lit/frag/output.js",
+          "bytes": 3
+        },
+        {
+          "id": "src/scene/shader-lib/wgsl/chunks/lit/frag/output.js",
+          "bytes": 3
+        }
+      ]
     }
   },
   "bundles": [
@@ -77,6 +4898,7 @@
         "dir": "playcanvas",
         "hash": "946ec88cb4d5"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/glb-shadows/webgl2/",
       "size": {
         "raw": 1021633,
@@ -2595,6 +7417,7 @@
         "dir": "playcanvas",
         "hash": "946ec88cb4d5"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/glb-shadows/webgpu/",
       "size": {
         "raw": 1022198,
@@ -5161,6 +9984,7 @@
         "dir": "playcanvas",
         "hash": "946ec88cb4d5"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/glb-shadows/webgpu-or-webgl2/",
       "size": {
         "raw": 1097324,
@@ -7851,6 +12675,7 @@
         "dir": "playcanvas",
         "hash": "33675c2298a4"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/spinning-cube/webgl2/",
       "size": {
         "raw": 927496,
@@ -10129,6 +14954,7 @@
         "dir": "playcanvas",
         "hash": "33675c2298a4"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/spinning-cube/webgpu/",
       "size": {
         "raw": 928055,
@@ -12455,6 +17281,7 @@
         "dir": "playcanvas",
         "hash": "33675c2298a4"
       },
+      "whole": "playcanvas",
       "build": "builds/playcanvas-2.21.4/spinning-cube/webgpu-or-webgl2/",
       "size": {
         "raw": 1003177,

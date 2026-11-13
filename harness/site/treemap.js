@@ -4,14 +4,29 @@
 // With a build to compare against, both builds are drawn at once. Every box takes the larger of
 // the module's two sizes, and a part of it is marked: red for bytes that were added, striped green
 // for bytes that were removed. A module in only one of the builds is marked whole.
+//
+// Against the whole library, every module of the library is drawn at its full size, with the
+// share the bundle kept in colour and the share tree-shaking removed faded.
 
 const Treemap = (() => {
     const HEAD = 18;
     const PAD = 2;
 
     // builds the folder hierarchy; a folder with a single sub-folder is merged into it
-    const buildTree = (modules, before) => {
+    const buildTree = (modules, before, whole) => {
         const root = { name: '', path: '', children: new Map(), value: 0, was: 0, size: 0 };
+        if (whole) {
+            // against the whole library, "was" is the module's full size. Code that is not part
+            // of the library, such as the scenario's own, counts as kept in full
+            before = new Map(whole);
+            modules = modules.map(([id, bytes]) => {
+                if (!before.has(id)) {
+                    before.set(id, bytes);
+                }
+                // the minifier can leave a module a few bytes larger in a bundle than in the whole
+                return [id, Math.min(bytes, before.get(id))];
+            });
+        }
         const add = (id, now, was) => {
             // when comparing, a box has to hold the module as it is in either build
             const size = before ? Math.max(now, was) : now;
@@ -129,6 +144,8 @@ const Treemap = (() => {
      * @param {Array<[string, number]>} opts.modules - Module ids and their bytes.
      * @param {Map<string, number>|null} opts.before - Bytes per module in the build compared
      * against, or null for no comparison.
+     * @param {Map<string, number>|null} opts.whole - Bytes per module in the whole library, to
+     * show what tree-shaking kept and removed; takes the place of opts.before.
      * @param {function(string): {fill: string, dark: boolean}} opts.areaColor - Fill for a
      * module when there is no comparison.
      * @param {string} opts.zoom - Path of the folder to show; empty for everything.
@@ -137,9 +154,11 @@ const Treemap = (() => {
      * @param {function(number): string} opts.formatChange - Formats a change in bytes.
      */
     const render = (opts) => {
-        const { container, crumbs, modules, before, zoom, onZoom, format, formatChange } = opts;
-        const root = buildTree(modules, before);
+        const { container, crumbs, modules, before, whole, zoom, onZoom, format, formatChange } = opts;
+        const root = buildTree(modules, before, whole);
         const top = (zoom && find(root, zoom)) || root;
+        // how much of a node the bundle kept, in words
+        const kept = node => (node.value === 0 ? 'removed' : node.value >= node.was ? `all ${format(node.was)} kept` : `kept ${format(node.value)} of ${format(node.was)}`);
 
         // the zoom trail
         const trail = [{ label: 'everything', path: '' }];
@@ -150,7 +169,8 @@ const Treemap = (() => {
                 trail.push({ label: node.name, path: node.path });
             }
         }
-        const total = before ? `${format(top.was)} → ${format(top.value)}, ${formatChange(top.value - top.was)}` : format(top.value);
+        const total = whole ? `kept ${format(top.value)} of ${format(top.was)} (${(100 * top.value / (top.was || 1)).toFixed(0)}%)` :
+            before ? `${format(top.was)} → ${format(top.value)}, ${formatChange(top.value - top.was)}` : format(top.value);
         crumbs.innerHTML = `${trail.map((step, i) => (i === trail.length - 1 ?
             `<strong>${esc(step.label)}</strong>` :
             `<button data-path="${esc(step.path)}">${esc(step.label)}</button>`)).join(' / ')
@@ -171,7 +191,20 @@ const Treemap = (() => {
             if (node.leaf) {
                 const diff = node.value - node.was;
                 const roomy = w > 54 && h > 16;
-                if (before) {
+                if (whole) {
+                    // the kept share of the box in its area's colour, the rest faded
+                    const share = node.size ? node.value / node.size : 0;
+                    const paint = opts.areaColor(node.path);
+                    el.className = `tm-leaf whole${share > 0.5 ? ` on-colour${paint.dark ? ' dark-text' : ''}` : ''}`;
+                    if (share > 0) {
+                        const part = document.createElement('div');
+                        part.className = 'tm-part';
+                        part.style.cssText = `background:${paint.fill};${w >= h ?
+                            `top:0;bottom:0;left:0;width:${Math.max(2, share * w)}px` :
+                            `left:0;right:0;top:0;height:${Math.max(2, share * h)}px`}`;
+                        el.appendChild(part);
+                    }
+                } else if (before) {
                     // the changed share of the box, as a band across its longer side
                     el.className = 'tm-leaf cmp';
                     const share = Math.abs(diff) / node.size;
@@ -189,12 +222,17 @@ const Treemap = (() => {
                     el.style.background = paint.fill;
                 }
                 if (roomy) {
-                    el.insertAdjacentHTML('beforeend', `<span>${esc(node.name)}</span>${h > 30 ? `<span class="sz">${before ? (diff === 0 ? 'no change' : formatChange(diff)) : format(node.value)}</span>` : ''}`);
+                    const detail = whole ? kept(node) : before ? (diff === 0 ? 'no change' : formatChange(diff)) : format(node.value);
+                    el.insertAdjacentHTML('beforeend', `<span>${esc(node.name)}</span>${h > 30 ? `<span class="sz">${detail}</span>` : ''}`);
                 }
                 el.addEventListener('mousemove', (event) => {
                     tip.hidden = false;
                     let lines = `${format(node.value)} <span class="t2">· ${(100 * node.value / (top.value || 1)).toFixed(1)}% of what is shown</span>`;
-                    if (before) {
+                    if (whole) {
+                        lines = node.value === 0 ? `<span class="t2">removed by tree-shaking, all</span> ${format(node.was)}` :
+                            node.value >= node.was ? `<span class="t2">kept whole:</span> ${format(node.was)}` :
+                                `kept ${format(node.value)} of ${format(node.was)} <span class="t2">· ${(100 * node.value / node.was).toFixed(0)}%</span>`;
+                    } else if (before) {
                         lines = node.was === 0 ? `<span class="t2">added:</span> ${format(node.value)}` :
                             node.value === 0 ? `<span class="t2">removed, was</span> ${format(node.was)}` :
                                 `${format(node.was)} → ${format(node.value)} <span class="t2">· ${diff === 0 ? 'no change' : formatChange(diff)}</span>`;
@@ -216,7 +254,7 @@ const Treemap = (() => {
             if (head) {
                 const title = document.createElement('div');
                 title.className = 'tm-head';
-                title.textContent = `${node.name} · ${before ? formatChange(node.value - node.was) : format(node.value)}`;
+                title.textContent = `${node.name} · ${whole ? kept(node) : before ? formatChange(node.value - node.was) : format(node.value)}`;
                 title.title = `Zoom into ${node.path}`;
                 title.addEventListener('click', () => onZoom(node.path));
                 el.appendChild(title);

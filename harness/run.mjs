@@ -13,7 +13,7 @@
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 
-import { bundle, measureBaseline } from './bundle.mjs';
+import { bundle, bundleWholeLibrary, measureFiles } from './bundle.mjs';
 import { engineLabel, expandSpecs, resolveEngine } from './engine.mjs';
 import { browserInfo, harnessInfo, machineInfo } from './environment.mjs';
 import { DIST_DIR, ROOT } from './paths.mjs';
@@ -74,11 +74,19 @@ const runEngine = async (spec) => {
         // the library's own full minified builds; baselineName is the one bundles are compared to
         baselineName: engine.baselineName,
         baseline: {},
+        // the whole library, per entry point, with its modules: what bundles are tree-shaken from
+        whole: {},
         bundles: []
     };
 
     for (const [name, baseline] of Object.entries(engine.baselines)) {
-        result.baseline[name] = await measureBaseline(engine, baseline);
+        if (baseline.files) {
+            result.baseline[name] = measureFiles(baseline.files);
+        } else {
+            const whole = await bundleWholeLibrary(engine, baseline.everything);
+            result.baseline[name] = whole.size;
+            result.whole[baseline.everything] = { name, ...whole };
+        }
     }
 
     const built = [];
@@ -105,6 +113,8 @@ const runEngine = async (spec) => {
                 verified: false,
                 revision: variant.revision,
                 implementation: variant.implementation,
+                // which whole-library build this bundle is tree-shaken from
+                whole: engine.wholeFor(variant.variant),
                 // where the runnable build is, relative to dist/; null when it is not kept
                 build: kept ? `${build}/` : null
             };

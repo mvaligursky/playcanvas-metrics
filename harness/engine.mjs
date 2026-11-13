@@ -58,8 +58,18 @@ const describe = (root, info) => {
         alias: { playcanvas: entry },
         // module ids in results are relative to this folder
         moduleRoot: path.join(root, 'build', 'playcanvas'),
-        baselines: { 'playcanvas.min.mjs': { files: [min] } },
-        baselineName: 'playcanvas.min.mjs',
+        // where the whole-library build is made
+        workDir: root,
+        // The whole library is every export of an entry point, bundled and minified the same way
+        // as the scenarios, so that the two can be compared module by module. The published
+        // minified bundle is recorded next to it; it is made with a different minifier.
+        baselines: {
+            'playcanvas, all exports': { everything: 'playcanvas' },
+            'playcanvas.min.mjs': { files: [min] }
+        },
+        baselineName: 'playcanvas, all exports',
+        // the whole-library build a variant is tree-shaken from
+        wholeFor: () => 'playcanvas',
         ...info
     };
 };
@@ -247,6 +257,7 @@ const resolveThree = (spec) => {
         // bare imports of three are resolved as if written in a file next to its node_modules
         resolveFrom: { pattern: /^three(\/|$)/, importer: path.join(dir, 'index.js') },
         moduleRoot: root,
+        workDir: dir,
         // three.js no longer publishes minified builds, so the full library is every export of
         // an entry point, bundled and minified the same way as the scenarios
         baselines: {
@@ -254,6 +265,8 @@ const resolveThree = (spec) => {
             'three/webgpu, all exports': { everything: 'three/webgpu' }
         },
         baselineName: 'three, all exports',
+        // the WebGPU renderer lives in its own entry point, with its own copy of the library
+        wholeFor: variant => (variant.includes('webgpu') ? 'three/webgpu' : 'three'),
         source: 'npm',
         sha: null,
         ref: null,
