@@ -187,7 +187,7 @@ function renderSize(list) {
                 return `<td class="dim" title="${esc(entry.note ?? '')}">${STATUS[entry.status]}</td>`;
             }
             // builds of published releases are kept and can be opened
-            const links = entry.build ? `<a href="${ROOT}${entry.build}">run</a><a href="${ROOT}${entry.build}screenshot.png">picture</a>` : '';
+            const links = entry.build ? `<a href="${ROOT}${entry.build}">run</a>${entry.picture ? `<a href="${ROOT}${entry.build}screenshot.png">picture</a>` : ''}` : '';
             return `<td>${kb(entry.size[state.metric])}${entry.verified ? '' : '<span class="tag">not checked</span>'}${links}</td>`;
         }).join('');
         const tag = e.track === 'release' ? '' : `<span class="tag">${e.track}</span>`;
