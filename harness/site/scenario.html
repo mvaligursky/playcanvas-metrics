@@ -58,6 +58,12 @@
         <div class="plot small"><canvas id="fullChart"></canvas></div>
     </section>
 
+    <section class="card" id="shareCard">
+        <h2 id="shareTitle">Share of the whole library kept</h2>
+        <p class="note">Each bundle as a percentage of the whole library of the same version, built the same way with nothing tree-shaken. A falling line means tree-shaking is removing more.</p>
+        <div class="plot small"><canvas id="shareChart"></canvas></div>
+    </section>
+
     <h2 class="section" id="bundle-section">Inside one bundle</h2>
     <p class="note">One variant of one library: how two of its versions differ, and what it is made of.</p>
     <div class="filters sub">
@@ -108,6 +114,7 @@
 <script src="../../assets/common.js"></script>
 <script src="../../assets/treemap.js"></script>
 <script src="../../data/{{SCENARIO}}.js"></script>
+<script src="../../data/whole.js"></script>
 <script src="../../assets/scenario.js"></script>
 </body>
 </html>

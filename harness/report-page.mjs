@@ -5,7 +5,9 @@
 //   bundle-size/<scenario>/index.html    the full report for one scenario
 //   bundle-size/<scenario>/treemap/      that scenario's treemap alone, filling the window
 //   assets/                              styles, scripts and the chart library, shared by all pages
-//   data/                                the numbers, as scripts so pages also open from disk
+//   data/                                the numbers, as scripts so pages also open from disk:
+//                                        summary.js, one file per scenario, and whole.js with the
+//                                        modules of each engine's whole-library builds
 //
 // Usage: npm run report   (a bench run that saves results also regenerates it)
 
@@ -138,6 +140,8 @@ const collect = (results, scenario) => {
                 impl: `${b.implementation.dir} ${b.implementation.hash}`,
                 build,
                 picture: build !== null && fs.existsSync(path.join(DIST_DIR, build, 'screenshot.png')),
+                // which whole-library build this bundle is tree-shaken from, when one was measured
+                whole: result.whole?.[b.whole] ? b.whole : null,
                 areas,
                 modules: b.modules.map(m => [m.id, m.bytes])
             };
@@ -152,6 +156,8 @@ const collect = (results, scenario) => {
             date: engine.date.slice(0, 10),
             fullName: result.baselineName,
             full: result.baseline[result.baselineName],
+            // the size of each whole-library build; their modules are in data/whole.js
+            whole: Object.fromEntries(Object.entries(result.whole ?? {}).map(([entry, w]) => [entry, { name: w.name, size: w.size }])),
             bundles: entries
         });
     }
@@ -228,6 +234,14 @@ export const writeReportPage = () => {
             treemapPage.replaceAll('{{TITLE}}', scenario.title).replaceAll('{{SCENARIO}}', scenario.name));
         fs.copyFileSync(scenario.reference, path.join(OUT_DIR, 'bundle-size', scenario.name, 'reference.png'));
     }
+
+    // every module of each engine's whole-library builds, shared by all scenario pages
+    const whole = {};
+    for (const result of results) {
+        whole[engineId(result.engine)] = Object.fromEntries(Object.entries(result.whole ?? {})
+        .map(([entry, w]) => [entry, w.modules.map(m => [m.id, m.bytes])]));
+    }
+    write(path.join(OUT_DIR, 'data', 'whole.js'), script('WHOLE', whole));
 
     write(path.join(OUT_DIR, 'data', 'summary.js'), script('SUMMARY', {
         generated: new Date().toISOString(),

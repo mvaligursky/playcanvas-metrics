@@ -23,6 +23,9 @@ const TREEMAP_PAGE = document.body.dataset.page === 'treemap';
 // what the comparison shows when nothing is chosen, for the current library
 const defaults = { from: null, to: null };
 
+// the "From" choice that stands for the whole library, not a version
+const WHOLE_ID = 'whole';
+
 const variantOf = key => key.split(' / ').at(-1);
 // a variant (webgl2, webgpu, ...) has the same colour in every library
 const bundleColor = key => css(VARIANT_SLOTS[DATA.variants.indexOf(variantOf(key)) % VARIANT_SLOTS.length]);
@@ -40,6 +43,13 @@ const entryOf = (engine, key) => engine.bundles[key] ?? engine.bundles[`${key.sp
 const measured = (engine, key) => {
     const entry = entryOf(engine, key);
     return entry?.status === 'measured' ? entry : null;
+};
+// the whole-library build that a bundle of an engine is tree-shaken from: its name, size and
+// modules. WHOLE is set by data/whole.js
+const wholeOf = (engine, key) => {
+    const entry = engine && measured(engine, key);
+    const modules = entry?.whole && window.WHOLE?.[engine.id]?.[entry.whole];
+    return modules ? { ...engine.whole[entry.whole], modules } : null;
 };
 
 // must match areaOf in harness/report-page.mjs
@@ -204,9 +214,7 @@ function renderFull(list) {
         title: items => engineName(list[items[0].dataIndex]),
         label: item => ` ${list[item.dataIndex].fullName}: ${item.parsed.y.toFixed(1)} KB`
     };
-    $('fullNote').textContent = state.library === 'playcanvas' ?
-        'The whole of playcanvas.min.mjs, with no tree-shaking: the upper bound for any app.' :
-        `Every export of the library's main entry point, bundled and minified by this harness, as ${libName(state.library)} publishes no minified build.`;
+    $('fullNote').textContent = 'Every export of the library\'s main entry point, bundled and minified by this harness the same way as the scenarios, with nothing tree-shaken: the upper bound for any app.';
     draw('fullChart', {
         type: 'line',
         data: {
@@ -222,6 +230,55 @@ function renderFull(list) {
                 pointBorderColor: css('--surface'),
                 pointBorderWidth: 2
             }]
+        },
+        options
+    });
+}
+
+// each bundle as a share of the whole library it was tree-shaken from, per version
+function renderShare(list) {
+    const shareOf = (e, key) => {
+        const entry = measured(e, key);
+        const whole = entry?.whole && e.whole[entry.whole];
+        return whole ? 100 * entry.size[state.metric] / whole.size[state.metric] : null;
+    };
+    const any = list.some(e => libBundles().some(key => shareOf(e, key) !== null));
+    $('shareCard').hidden = !any;
+    if (!any) {
+        return;
+    }
+    $('shareTitle').innerHTML = `${libLabel(state.library)}: share of the whole library kept`;
+
+    const options = baseOptions(`share of whole library, ${METRIC_NAME[state.metric]}`);
+    options.scales.y.ticks.callback = v => `${v}%`;
+    options.plugins.legend.labels.generateLabels = chart => Chart.defaults.plugins.legend.labels.generateLabels(chart)
+    .map(label => ({ ...label, fontColor: variantTextColor(label.text) }));
+    options.plugins.tooltip.callbacks = {
+        title: items => engineName(list[items[0].dataIndex]),
+        label: (item) => {
+            const e = list[item.dataIndex];
+            const entry = measured(e, libBundles()[item.datasetIndex]);
+            return ` ${item.dataset.label}: ${item.parsed.y.toFixed(1)}% (${kb(entry.size[state.metric])} of ${kb(e.whole[entry.whole].size[state.metric])})`;
+        }
+    };
+    draw('shareChart', {
+        type: 'line',
+        data: {
+            labels: list.map(axisLabel),
+            datasets: libBundles().map((key) => {
+                const color = bundleColor(key);
+                return {
+                    label: variantOf(key),
+                    data: list.map(e => shareOf(e, key)),
+                    borderColor: color,
+                    backgroundColor: color,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 7,
+                    pointBorderColor: css('--surface'),
+                    pointBorderWidth: 2
+                };
+            })
         },
         options
     });
@@ -284,6 +341,25 @@ function renderCompareTiles(list) {
     const b = to && measured(to, key);
     const tile = (name, value, note) => `<div class="tile"><div class="name">${name}</div><div class="value">${value}</div><div class="change">${note}</div></div>`;
 
+    // against the whole library: how much of it the bundle kept
+    if (state.from === WHOLE_ID) {
+        const whole = wholeOf(to, key);
+        if (!b || !whole) {
+            $('compareTiles').innerHTML = tile('No comparison', '—', 'This version has no whole-library build measured for this variant.');
+            return;
+        }
+        const full = whole.size[state.metric];
+        const kept = b.size[state.metric];
+        $('compareTiles').innerHTML = [
+            tile(`${libLabel(state.library, engineName(to))} ${esc(variantOf(key))}: kept by the bundle`,
+                `${(100 * kept / full).toFixed(0)}%`,
+                `${kb(full - kept)} removed by tree-shaking, ${METRIC_NAME[state.metric]}`),
+            tile(`Whole library: ${esc(whole.name)}`, kb(full), 'nothing tree-shaken, built the same way'),
+            tile('This bundle', kb(kept), `dated ${to.date}`)
+        ].join('');
+        return;
+    }
+
     if (!a || !b) {
         $('compareTiles').innerHTML = tile('No comparison', '—', 'One of the two versions has no measurement for this variant.');
         return;
@@ -307,13 +383,17 @@ function renderTreemap(list) {
     const shown = to && measured(to, key);
     const base = from && measured(from, key);
     const compare = state.byChange && base && from !== to;
+    // against the whole library, the treemap shows what the bundle kept of every module
+    const whole = state.from === WHOLE_ID ? wholeOf(to, key) : null;
 
-    $('tmTitle').innerHTML = !to ? 'Inside the bundle' : compare ?
-        `Inside the ${esc(variantOf(key))} bundle: ${libLabel(state.library, engineName(from))} against ${libLabel(state.library, engineName(to))}` :
-        `Inside the ${esc(variantOf(key))} bundle of ${libLabel(state.library, engineName(to))}`;
+    $('tmTitle').innerHTML = !to ? 'Inside the bundle' : whole ?
+        `What the ${esc(variantOf(key))} bundle of ${libLabel(state.library, engineName(to))} keeps of the whole library` : compare ?
+            `Inside the ${esc(variantOf(key))} bundle: ${libLabel(state.library, engineName(from))} against ${libLabel(state.library, engineName(to))}` :
+            `Inside the ${esc(variantOf(key))} bundle of ${libLabel(state.library, engineName(to))}`;
     $('byChange').checked = state.byChange;
-    $('byChangeLabel').textContent = from && from !== to ? `Show what was added and removed since ${engineName(from)}` : 'Show what was added and removed (pick two different versions)';
-    $('byChange').disabled = !base || from === to;
+    $('byChangeLabel').textContent = state.from === WHOLE_ID ? 'Added and removed marking applies between two versions' :
+        from && from !== to ? `Show what was added and removed since ${engineName(from)}` : 'Show what was added and removed (pick two different versions)';
+    $('byChange').disabled = state.from === WHOLE_ID || !base || from === to;
 
     if (!shown) {
         $('treemap').innerHTML = '';
@@ -330,6 +410,7 @@ function renderTreemap(list) {
         crumbs: $('tmCrumbs'),
         modules: shown.modules,
         before,
+        whole: whole ? new Map(whole.modules) : null,
         zoom: state.zoom,
         onZoom: (path) => {
             state.zoom = path;
@@ -345,9 +426,45 @@ function renderTreemap(list) {
         }
     });
 
+    const areaLegend = [...libAreas(), 'Other'].map(area => `<span><i style="background:${areaColor(area)}"></i>${esc(area)}</span>`).join('');
+    if (whole) {
+        $('tmLegend').innerHTML = `${areaLegend}<span><i class="shaken"></i>removed by tree-shaking</span><span>Each box is a module at its full size; the coloured part is what the bundle kept.</span>`;
+        return;
+    }
     $('tmLegend').innerHTML = compare ?
         `<span><i class="added"></i>added since ${esc(engineName(from))}</span><span><i class="removed"></i>removed since ${esc(engineName(from))}</span><span><i class="same"></i>in both</span><span>Each box is the larger of the module's two sizes, so removed code still has its place.</span>` :
-        [...libAreas(), 'Other'].map(area => `<span><i style="background:${areaColor(area)}"></i>${esc(area)}</span>`).join('');
+        areaLegend;
+}
+
+// against the whole library: the largest modules removed, kept in part and kept whole
+function renderKept(to, key, whole) {
+    const entry = measured(to, key);
+    const inBundle = new Map(entry.modules);
+    // the list of exports that ends the whole-library build is not a module of the library
+    const rows = whole.modules.filter(([id]) => id !== '(export list)').map(([id, full]) => {
+        const kept = Math.min(inBundle.get(id) ?? 0, full);
+        return { id, full, kept, removed: full - kept };
+    });
+    const removed = rows.filter(r => r.kept === 0).sort((a, b) => b.full - a.full);
+    const partly = rows.filter(r => r.kept > 0 && r.removed > 0).sort((a, b) => b.removed - a.removed);
+    const kept = rows.filter(r => r.removed === 0).sort((a, b) => b.full - a.full);
+    const sum = (list, field) => list.reduce((total, r) => total + r[field], 0);
+
+    $('diffTitle').innerHTML = `What tree-shaking removed from the ${libLabel(state.library, engineName(to))} ${esc(variantOf(key))} bundle`;
+    $('diffNote').textContent = `Of ${rows.length} modules in the whole library, ${removed.length} ${removed.length === 1 ? 'was' : 'were'} removed entirely (${kb(sum(removed, 'full'))}), ${partly.length} were kept in part (${kb(sum(partly, 'removed'))} removed) and ${kept.length} were kept whole (${kb(sum(kept, 'full'))}). Sizes are minified bytes before compression.`;
+
+    const LIMIT = 12;
+    const group = (title, list) => {
+        const shown = state.allModules ? list : list.slice(0, LIMIT);
+        return `<tr><th colspan="4">${title}${!state.allModules && list.length > LIMIT ? `, largest ${LIMIT} of ${list.length}` : ''}</th></tr>${
+            shown.map(r => `<tr><td class="wrap">${esc(r.id)}</td><td>${kb(r.full)}</td><td>${r.kept ? kb(r.kept) : '—'}</td><td>${(100 * r.kept / r.full).toFixed(0)}%</td></tr>`).join('')}`;
+    };
+    $('diffTable').innerHTML = `<thead><tr><th>Module</th><th>Whole library</th><th>In the bundle</th><th>Kept</th></tr></thead><tbody>${
+        group('Removed entirely', removed)}${group('Kept in part', partly)}${group('Kept whole', kept)
+    }</tbody><tfoot><tr><td>Whole library</td><td>${kb(whole.size.raw)}</td><td>${kb(entry.size.raw)}</td><td>${(100 * entry.size.raw / whole.size.raw).toFixed(0)}%</td></tr></tfoot>`;
+
+    $('diffMore').hidden = state.allModules || rows.length <= LIMIT;
+    $('diffMore').textContent = `Show all ${rows.length} modules`;
 }
 
 function renderDiff(list) {
@@ -356,8 +473,20 @@ function renderDiff(list) {
     const to = list.find(e => e.id === state.to);
     const a = from && measured(from, key);
     const b = to && measured(to, key);
-    $('diffTitle').innerHTML = `Modules that changed in the ${libLabel(state.library)} ${esc(variantOf(key))} bundle`;
     $('diffMore').hidden = true;
+
+    if (state.from === WHOLE_ID) {
+        const whole = wholeOf(to, key);
+        if (whole) {
+            renderKept(to, key, whole);
+        } else {
+            $('diffTitle').textContent = 'What tree-shaking removed';
+            $('diffNote').textContent = 'This version has no whole-library build measured for this variant.';
+            $('diffTable').innerHTML = '';
+        }
+        return;
+    }
+    $('diffTitle').innerHTML = `Modules that changed in the ${libLabel(state.library)} ${esc(variantOf(key))} bundle`;
 
     if (!a || !b) {
         $('diffNote').textContent = 'Pick two versions that both have a measurement for this bundle.';
@@ -413,11 +542,12 @@ function render() {
     if (!list.some(e => e.id === state.to)) {
         state.to = defaults.to;
     }
-    if (!list.some(e => e.id === state.from)) {
+    if (state.from !== WHOLE_ID && !list.some(e => e.id === state.from)) {
         state.from = defaults.from;
     }
     const options = list.map(e => [e.id, engineName(e)]);
-    fillSelect($('from'), options, state.from);
+    // besides another version, a bundle can be set against the library it was tree-shaken from
+    fillSelect($('from'), [[WHOLE_ID, 'Whole library (no tree-shaking)'], ...options], state.from);
     fillSelect($('to'), options, state.to);
 
     $('library2').value = state.library;
@@ -445,6 +575,7 @@ function render() {
     renderTiles(list);
     renderSize(list);
     renderFull(list);
+    renderShare(list);
     renderComposition(list);
     renderCompareTiles(list);
     renderTreemap(list);
