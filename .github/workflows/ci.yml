@@ -24,8 +24,8 @@ jobs:
       # runners have no GPU.
       - run: npm test
 
-  # Builds the whole report site, with the runnable build of every published release, and keeps
-  # it as an artifact. Publishing it to a host is a separate step, still to be decided.
+  # Builds the whole report site, with the runnable build of every published release. A pull
+  # request keeps it as an artifact to look at; a push to main hands it to the deploy job.
   site:
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +42,8 @@ jobs:
           key: engines-${{ hashFiles('results/*.json') }}
           restore-keys: engines-
       - run: npm run builds
-      - uses: actions/upload-artifact@v7
+      - if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v7
         with:
           name: report-site
           path: |
@@ -51,3 +52,26 @@ jobs:
             dist/builds
           if-no-files-found: error
           retention-days: 30
+      - if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  # Publishes the site to GitHub Pages: https://mvaligursky.github.io/playcanvas-metrics/
+  deploy:
+    if: github.event_name == 'push'
+    needs: [check, site]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # a newer push waits for a deployment in progress, and replaces any that is still queued
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

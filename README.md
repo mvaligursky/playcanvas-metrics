@@ -1,7 +1,9 @@
-# engine-metrics
+# playcanvas-metrics
 
 Benchmarks that track the PlayCanvas engine over time, and against three.js. So far: tree-shaken
 bundle size.
+
+**Report: https://mvaligursky.github.io/playcanvas-metrics/**
 
 ## Running
 
@@ -84,12 +86,14 @@ npm run builds
 It rebuilds every release that has a stored result and reports any build whose size differs from
 that result. It does not run the browser check, so those builds have no "picture" link.
 
-### Getting the report without cloning
+### The published report
 
-CI builds the whole site, runnable builds included, on every push and pull request, and keeps it
-for 30 days as the `report-site` artifact of the run. Download it from the run's page under
-Actions, unpack it, and open `report/index.html`. The report works straight from disk; the "run"
-links need the folder to be served over HTTP, for example with `npx serve`.
+Every push to `main` rebuilds the whole site, runnable builds included, and publishes it to
+GitHub Pages at https://mvaligursky.github.io/playcanvas-metrics/. It shows the committed results,
+which are the published releases only.
+
+Pull requests build the same site without publishing it, and keep it for 30 days as the
+`report-site` artifact of the run, for checking a change before it is merged.
 
 ### Options for `npm run bench`
 

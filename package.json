@@ -1,5 +1,5 @@
 {
-  "name": "engine-metrics",
+  "name": "playcanvas-metrics",
   "version": "0.2.0",
   "private": true,
   "description": "Benchmarks tracking PlayCanvas engine bundle size and performance over time",
