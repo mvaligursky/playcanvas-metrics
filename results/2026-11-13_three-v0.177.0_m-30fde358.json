@@ -1,0 +1,307 @@
+{
+  "schema": 3,
+  "timestamp": "2026-11-13T15:48:02.914Z",
+  "machine": "m-30fde358",
+  "environment": {
+    "id": "m-30fde358",
+    "os": {
+      "platform": "win32",
+      "version": "Windows 11 Pro",
+      "release": "10.0.26200",
+      "arch": "x64"
+    },
+    "cpu": {
+      "model": "Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz",
+      "threads": 16
+    },
+    "memoryGb": 32
+  },
+  "harness": {
+    "version": "0.2.0",
+    "commit": "0c3f97589bcf509eb82e38ec4e930265061f011e",
+    "dirty": true,
+    "node": "v24.22.2",
+    "vite": "8.3.3",
+    "rolldown": "1.2.19",
+    "playwright": "1.65.0"
+  },
+  "browser": {
+    "name": "chrome",
+    "version": "157.0.8103.51",
+    "headless": true,
+    "args": [
+      "--enable-unsafe-webgpu",
+      "--enable-gpu",
+      "--ignore-gpu-blocklist"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 16,
+    "webgl2": {
+      "vendor": "Google Inc. (NVIDIA)",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2070 (0x00001F07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "webgpu": {
+      "vendor": "nvidia",
+      "architecture": "turing",
+      "device": "",
+      "description": "",
+      "fallbackAdapter": false
+    }
+  },
+  "engine": {
+    "library": "three",
+    "version": "0.177.0",
+    "source": "npm",
+    "sha": null,
+    "ref": null,
+    "dirty": false,
+    "date": "2025-05-30T17:34:14.486Z"
+  },
+  "baselineName": "three, all exports",
+  "baseline": {
+    "three, all exports": {
+      "raw": 688765,
+      "gzip": 172691,
+      "brotli": 140063
+    },
+    "three/webgpu, all exports": {
+      "raw": 909266,
+      "gzip": 246713,
+      "brotli": 198781
+    }
+  },
+  "bundles": [
+    {
+      "scenario": "glb-shadows",
+      "framework": "three",
+      "variant": "webgl2",
+      "status": "measured",
+      "verified": true,
+      "revision": 2,
+      "implementation": {
+        "dir": "three",
+        "hash": "9aba05a3fb72"
+      },
+      "build": "builds/three-0.177.0/glb-shadows/webgl2/",
+      "size": {
+        "raw": 559695,
+        "gzip": 139851,
+        "brotli": 114290
+      },
+      "files": [
+        {
+          "file": "assets/index.js",
+          "raw": 559695,
+          "gzip": 139851,
+          "brotli": 114290
+        }
+      ],
+      "modules": [
+        {
+          "id": "build/three.module.js",
+          "bytes": 316628
+        },
+        {
+          "id": "build/three.core.js",
+          "bytes": 197371
+        },
+        {
+          "id": "examples/jsm/loaders/GLTFLoader.js",
+          "bytes": 42870
+        },
+        {
+          "id": "scenarios/glb-shadows/three/scene.js",
+          "bytes": 1485
+        },
+        {
+          "id": "examples/jsm/utils/BufferGeometryUtils.js",
+          "bytes": 981
+        },
+        {
+          "id": "scenarios/glb-shadows/three/webgl2/main.js",
+          "bytes": 250
+        },
+        {
+          "id": "scenarios/glb-shadows/assets/playcanvas-cube.glb?url",
+          "bytes": 68
+        },
+        {
+          "id": "(unmapped)",
+          "bytes": 42
+        }
+      ],
+      "deviceType": "webgl2",
+      "referenceDiff": 0.000006510416666666667,
+      "canonicalDiff": {
+        "outline": 0,
+        "shading": 1.8994937828104497
+      }
+    },
+    {
+      "scenario": "glb-shadows",
+      "framework": "three",
+      "variant": "webgpu-or-webgl2",
+      "status": "measured",
+      "verified": true,
+      "revision": 2,
+      "implementation": {
+        "dir": "three",
+        "hash": "9aba05a3fb72"
+      },
+      "build": "builds/three-0.177.0/glb-shadows/webgpu-or-webgl2/",
+      "size": {
+        "raw": 710081,
+        "gzip": 192824,
+        "brotli": 156887
+      },
+      "files": [
+        {
+          "file": "assets/index.js",
+          "raw": 710081,
+          "gzip": 192824,
+          "brotli": 156887
+        }
+      ],
+      "modules": [
+        {
+          "id": "build/three.webgpu.js",
+          "bytes": 452253
+        },
+        {
+          "id": "build/three.core.js",
+          "bytes": 212094
+        },
+        {
+          "id": "examples/jsm/loaders/GLTFLoader.js",
+          "bytes": 42891
+        },
+        {
+          "id": "scenarios/glb-shadows/three/scene.js",
+          "bytes": 1492
+        },
+        {
+          "id": "examples/jsm/utils/BufferGeometryUtils.js",
+          "bytes": 981
+        },
+        {
+          "id": "scenarios/glb-shadows/three/webgpu-or-webgl2/main.js",
+          "bytes": 302
+        },
+        {
+          "id": "scenarios/glb-shadows/assets/playcanvas-cube.glb?url",
+          "bytes": 68
+        }
+      ],
+      "deviceType": "webgpu",
+      "referenceDiff": 0.0014713541666666666,
+      "canonicalDiff": {
+        "outline": 0.00005859375,
+        "shading": 1.877953096751463
+      }
+    },
+    {
+      "scenario": "spinning-cube",
+      "framework": "three",
+      "variant": "webgl2",
+      "status": "measured",
+      "verified": true,
+      "revision": 2,
+      "implementation": {
+        "dir": "three",
+        "hash": "9d67289e1ce0"
+      },
+      "build": "builds/three-0.177.0/spinning-cube/webgl2/",
+      "size": {
+        "raw": 478290,
+        "gzip": 117763,
+        "brotli": 96717
+      },
+      "files": [
+        {
+          "file": "assets/index.js",
+          "raw": 478290,
+          "gzip": 117763,
+          "brotli": 96717
+        }
+      ],
+      "modules": [
+        {
+          "id": "build/three.module.js",
+          "bytes": 316578
+        },
+        {
+          "id": "build/three.core.js",
+          "bytes": 160629
+        },
+        {
+          "id": "scenarios/spinning-cube/three/scene.js",
+          "bytes": 850
+        },
+        {
+          "id": "scenarios/spinning-cube/three/webgl2/main.js",
+          "bytes": 191
+        },
+        {
+          "id": "(unmapped)",
+          "bytes": 42
+        }
+      ],
+      "deviceType": "webgl2",
+      "referenceDiff": 0,
+      "canonicalDiff": {
+        "outline": 0,
+        "shading": 1.564965741927488
+      }
+    },
+    {
+      "scenario": "spinning-cube",
+      "framework": "three",
+      "variant": "webgpu-or-webgl2",
+      "status": "measured",
+      "verified": true,
+      "revision": 2,
+      "implementation": {
+        "dir": "three",
+        "hash": "9d67289e1ce0"
+      },
+      "build": "builds/three-0.177.0/spinning-cube/webgpu-or-webgl2/",
+      "size": {
+        "raw": 642398,
+        "gzip": 173925,
+        "brotli": 141722
+      },
+      "files": [
+        {
+          "file": "assets/index.js",
+          "raw": 642398,
+          "gzip": 173925,
+          "brotli": 141722
+        }
+      ],
+      "modules": [
+        {
+          "id": "build/three.webgpu.js",
+          "bytes": 452216
+        },
+        {
+          "id": "build/three.core.js",
+          "bytes": 189089
+        },
+        {
+          "id": "scenarios/spinning-cube/three/scene.js",
+          "bytes": 850
+        },
+        {
+          "id": "scenarios/spinning-cube/three/webgpu-or-webgl2/main.js",
+          "bytes": 243
+        }
+      ],
+      "deviceType": "webgpu",
+      "referenceDiff": 0.0003157552083333333,
+      "canonicalDiff": {
+        "outline": 0.00004991319444444445,
+        "shading": 1.8217684772266525
+      }
+    }
+  ]
+}
