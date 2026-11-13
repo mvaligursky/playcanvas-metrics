@@ -23,3 +23,31 @@ jobs:
       # generates the report from the committed results. The browser check is skipped, as hosted
       # runners have no GPU.
       - run: npm test
+
+  # Builds the whole report site, with the runnable build of every published release, and keeps
+  # it as an artifact. Publishing it to a host is a separate step, still to be decided.
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # the installed releases only change when a result is added
+      - uses: actions/cache@v6
+        with:
+          path: .cache/engine
+          key: engines-${{ hashFiles('results/*.json') }}
+          restore-keys: engines-
+      - run: npm run builds
+      - uses: actions/upload-artifact@v7
+        with:
+          name: report-site
+          path: |
+            dist/index.html
+            dist/report
+            dist/builds
+          if-no-files-found: error
+          retention-days: 30

@@ -128,13 +128,16 @@ const collect = (results, scenario) => {
             for (const [area, bytes] of Object.entries(areas)) {
                 areaMax[library].set(area, Math.max(areaMax[library].get(area) ?? 0, bytes));
             }
+            // a build is only offered when it is on disk, and its picture only when the browser
+            // check has run on this machine
+            const build = b.build && fs.existsSync(path.join(DIST_DIR, b.build, 'index.html')) ? b.build : null;
             entries[key] = {
                 status: 'measured',
                 verified: b.verified,
                 size: b.size,
                 impl: `${b.implementation.dir} ${b.implementation.hash}`,
-                // only offered when the build is still on disk
-                build: b.build && fs.existsSync(path.join(DIST_DIR, b.build, 'index.html')) ? b.build : null,
+                build,
+                picture: build !== null && fs.existsSync(path.join(DIST_DIR, build, 'screenshot.png')),
                 areas,
                 modules: b.modules.map(m => [m.id, m.bytes])
             };

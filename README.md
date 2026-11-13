@@ -75,7 +75,21 @@ table as "run" and "picture":
 
 Add `?pose=1` to hold the scene at the reference pose. Builds from source (main, branches, a
 checkout's working tree) are not kept; they go to `dist/work/` and are overwritten by the next run.
-`dist/` is not committed, so on a fresh clone the builds come back by rerunning the releases.
+`dist/` is not committed. On a fresh clone, this brings the builds back, without touching results:
+
+```bash
+npm run builds
+```
+
+It rebuilds every release that has a stored result and reports any build whose size differs from
+that result. It does not run the browser check, so those builds have no "picture" link.
+
+### Getting the report without cloning
+
+CI builds the whole site, runnable builds included, on every push and pull request, and keeps it
+for 30 days as the `report-site` artifact of the run. Download it from the run's page under
+Actions, unpack it, and open `report/index.html`. The report works straight from disk; the "run"
+links need the folder to be served over HTTP, for example with `npx serve`.
 
 ### Options for `npm run bench`
 
