@@ -4,7 +4,7 @@
   "headline": "webgpu-or-webgl2",
   "revision": 2,
   "implementations": [
-    { "framework": "playcanvas", "dir": "playcanvas", "engine": ">=2.20.0" },
-    { "framework": "three", "dir": "three", "engine": ">=0.183.0", "reference": "reference.three.png" }
+    { "framework": "playcanvas", "dir": "playcanvas", "engine": ">=2.8.0" },
+    { "framework": "three", "dir": "three", "engine": ">=0.177.0", "reference": "reference.three.png" }
   ]
 }
