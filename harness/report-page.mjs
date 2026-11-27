@@ -15,6 +15,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { SHARED, loadDeps } from './deps.mjs';
 import { DIST_DIR, ROOT } from './paths.mjs';
 import { bundleKey, engineId, loadResults } from './report.mjs';
 import { loadScenarios } from './scenarios.mjs';
@@ -27,6 +28,7 @@ const MAX_AREAS = 7;
 
 const SECTIONS = [
     { id: 'bundle-size', title: 'Bundle size', description: 'What a small app ships after tree-shaking, bundling and minifying.', measured: true },
+    { id: 'dependencies', title: 'Dependencies', description: 'The npm packages the engine and its examples install, and their size.', measured: true },
     { id: 'first-frame', title: 'Time to first frame', description: 'How long a scenario takes from page load to its first rendered frame.', measured: false },
     { id: 'performance', title: 'Runtime performance', description: 'Frame time, draw calls and memory while a scenario runs.', measured: false }
 ];
@@ -198,6 +200,20 @@ const summarize = (data) => {
     return { ...data.scenario, libraries: data.libraries, variants: data.variants, series };
 };
 
+// every stored dependency result, in release order, as the dependency pages read them
+const collectDeps = () => ({
+    shared: SHARED,
+    releases: loadDeps().map(r => ({
+        id: r.source === 'npm' ? `v${r.version}` : `main-${r.sha.slice(0, 7)}`,
+        name: r.source === 'npm' ? r.version : 'main',
+        sub: r.source === 'npm' ? '' : r.sha.slice(0, 7),
+        track: r.source === 'npm' ? 'release' : 'main',
+        version: r.version,
+        date: r.date.slice(0, 10),
+        projects: r.projects
+    }))
+});
+
 const script = (name, value) => `window.${name} = ${JSON.stringify(value).replace(/</g, '\\u003c')};\n`;
 
 const write = (file, text) => {
@@ -214,7 +230,7 @@ export const writeReportPage = () => {
 
     fs.rmSync(OUT_DIR, { recursive: true, force: true });
 
-    for (const name of ['site.css', 'common.js', 'treemap.js', 'scenario.js']) {
+    for (const name of ['site.css', 'common.js', 'treemap.js', 'scenario.js', 'deps.js']) {
         write(path.join(OUT_DIR, 'assets', name), fs.readFileSync(path.join(SITE_DIR, name)));
     }
     // copied in, so the site works offline and from any server
@@ -243,11 +259,20 @@ export const writeReportPage = () => {
     }
     write(path.join(OUT_DIR, 'data', 'whole.js'), script('WHOLE', whole));
 
+    // the dependencies section: every release's packages, and its two pages
+    const deps = collectDeps();
+    write(path.join(OUT_DIR, 'data', 'deps.js'), script('DEPS', deps));
+    write(path.join(OUT_DIR, 'dependencies', 'index.html'), fs.readFileSync(path.join(SITE_DIR, 'deps.html')));
+    write(path.join(OUT_DIR, 'dependencies', 'explore', 'index.html'), fs.readFileSync(path.join(SITE_DIR, 'deps-explore.html')));
+
     write(path.join(OUT_DIR, 'data', 'summary.js'), script('SUMMARY', {
         generated: new Date().toISOString(),
         environment: environmentOf(results),
         sections: SECTIONS,
-        scenarios: summaries
+        scenarios: summaries,
+        // installed packages and size over releases, per project, for the home page
+        deps: Object.fromEntries(['engine', 'examples'].map(project => [project, deps.releases.filter(r => r.projects[project])
+        .map(r => ({ name: r.name, sub: r.sub, track: r.track, date: r.date, installed: r.projects[project].counts.installed, size: r.projects[project].counts.size }))]))
     }));
     write(path.join(OUT_DIR, 'bundle-size', 'index.html'), fs.readFileSync(path.join(SITE_DIR, 'section.html')));
     write(path.join(OUT_DIR, 'index.html'), fs.readFileSync(path.join(SITE_DIR, 'home.html')));

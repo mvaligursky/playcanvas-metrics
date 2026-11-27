@@ -26,6 +26,21 @@ function render() {
         if (!section.measured) {
             return `<div class="card off"><h2>${esc(section.title)}</h2><p class="note">${esc(section.description)}</p><div class="open">Not measured yet</div></div>`;
         }
+        if (section.id === 'dependencies') {
+            // one row per project: packages installed in the latest release, and the trend
+            const rows = ['engine', 'examples'].map((project) => {
+                const points = SUMMARY.deps[project];
+                const now = latestRelease(points);
+                const was = previousRelease(points);
+                const diff = was ? now.installed - was.installed : null;
+                return `<div style="margin-top: 14px">
+                    <h3>${project === 'engine' ? 'Engine' : 'Examples'}</h3>
+                    <div><strong>${now.installed} packages</strong> <span class="note">${(now.size / 1048576).toFixed(0)} MB, ${libLabel('playcanvas', now.name)}${diff === null ? '' : `, <span class="${cls(diff)}">${diff > 0 ? '+' : diff < 0 ? '−' : '±'}${Math.abs(diff)}</span> since ${esc(was.name)}`}</span></div>
+                    <div class="plot spark"><canvas id="deps-${project}"></canvas></div>
+                </div>`;
+            }).join('');
+            return `<a class="card" href="${section.id}/"><h2>${esc(section.title)}</h2><p class="note">${esc(section.description)}</p>${rows}<div class="open">Engine and examples →</div></a>`;
+        }
         // one row per scenario: where PlayCanvas' latest release stands, and its trend
         const rows = SUMMARY.scenarios.map((scenario, i) => {
             const points = scenario.series[scenario.headline]?.playcanvas ?? [];
@@ -51,6 +66,32 @@ function render() {
             timelineChart(`spark${i}`, scenario.series[scenario.headline], metric, true);
         }
     });
+
+    // packages installed over releases, as a bare trend line
+    for (const project of ['engine', 'examples']) {
+        const options = baseOptions('');
+        options.scales.x.type = 'linear';
+        options.scales.x.display = false;
+        options.scales.y.display = false;
+        options.plugins.legend.display = false;
+        options.layout = { padding: 6 };
+        options.interaction = { mode: 'nearest', intersect: false };
+        options.plugins.tooltip.callbacks = {
+            title: items => items[0].raw.point.name,
+            label: item => ` ${item.raw.point.installed} packages, dated ${item.raw.point.date}`
+        };
+        const color = css(project === 'engine' ? '--s3' : '--s7');
+        draw(`deps-${project}`, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    data: SUMMARY.deps[project].map(point => ({ x: Date.parse(point.date), y: point.installed, point })),
+                    borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4
+                }]
+            },
+            options
+        });
+    }
 }
 
 if (SUMMARY.environment) {

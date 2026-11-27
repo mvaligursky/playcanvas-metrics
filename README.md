@@ -1,7 +1,7 @@
 # playcanvas-metrics
 
 Benchmarks that track the PlayCanvas engine over time, and against three.js. So far: tree-shaken
-bundle size.
+bundle size, and the npm dependencies of the engine and its examples.
 
 **Report: https://mvaligursky.github.io/playcanvas-metrics/**
 
@@ -188,6 +188,35 @@ Each bundle in a result has one of three outcomes:
 | `failed` | In range, but the build or the browser check broke. No size is recorded. |
 
 A run exits with an error if anything failed.
+
+## Dependencies
+
+```bash
+npm run deps
+```
+
+Collects the npm dependencies of the engine repository and of its examples app for the latest patch
+of every 2.x release, and for main, from the `package-lock.json` files at each release tag of the
+engine checkout (`--checkout`, default `../engine`). Nothing is installed or built, and releases
+already collected are skipped (`--force` collects them again).
+
+- **Per project and release**: the top-level dependencies (runtime and development), every package
+  they install, and each package's unpacked size from the npm registry. Registry lookups are
+  cached in `.cache/`.
+- **Counted for one platform**: the lockfiles list native binaries for every platform, but an
+  install only fetches its own, so only packages a Linux x64 (glibc) install gets are counted.
+- **Groups**: each package is put under the top-level dependency that installs it, or under
+  `(shared)` when several do. The explorer's treemap uses these groups.
+- **What an app installs**: the closure of the engine's runtime dependencies, which is what an app
+  gets with the published `playcanvas` package.
+- **Local links** in a lockfile are followed into local workspace packages; the examples' link to
+  the engine itself is left out, as the engine is counted as a project of its own.
+- **Results**: `results/deps/v<version>.json` per release, committed; main goes to
+  `results/local/deps/`, which is not.
+
+The report has a Dependencies section with charts over releases and an explorer at
+`/report/dependencies/explore/`: a treemap of one release, or of two with what was added and
+removed, the top-level dependencies, and every package that changed.
 
 ## Scenarios and engine versions
 

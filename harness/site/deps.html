@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dependencies - PlayCanvas metrics</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="overview">
+<main>
+    <div class="crumbs"><a href="../">PlayCanvas metrics</a> / Dependencies</div>
+    <h1>Dependencies</h1>
+    <p class="lede">The npm packages the engine repository and its examples app install, release by release, read from each release's lockfiles. Sizes are unpacked, as installed on Linux x64, from the npm registry. Almost all of it is development tooling: an app that installs <span class="lib lib-playcanvas">playcanvas</span> gets only the engine's runtime dependencies.</p>
+
+    <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+        <a class="card" href="explore/"><h2>Explore the engine's dependencies &rarr;</h2><p class="note">A treemap of one release, or what changed between two.</p></a>
+        <a class="card" href="explore/?project=examples"><h2>Explore the examples' dependencies &rarr;</h2><p class="note">The same, for the examples app.</p></a>
+    </div>
+
+    <h2 class="section">Latest release</h2>
+    <div class="tiles" id="tiles"></div>
+
+    <section class="card">
+        <h2>Packages installed</h2>
+        <p class="note">Every package an install puts in node_modules, top-level dependencies and everything they pull in.</p>
+        <div class="plot small"><canvas id="installedChart"></canvas></div>
+    </section>
+    <div class="pair">
+        <section class="card" style="margin-top: 0">
+            <h2>Unpacked size</h2>
+            <p class="note">The packages above, as installed. Packages with no size recorded count as nothing.</p>
+            <div class="plot small"><canvas id="sizeChart"></canvas></div>
+        </section>
+        <section class="card" style="margin-top: 0">
+            <h2>Top-level dependencies</h2>
+            <p class="note">The entries in package.json: runtime and development together.</p>
+            <div class="plot small"><canvas id="topChart"></canvas></div>
+        </section>
+    </div>
+
+    <section class="card">
+        <h2>By release</h2>
+        <div class="scroll"><table id="releaseTable"></table></div>
+    </section>
+</main>
+
+<script src="../assets/chart.js"></script>
+<script src="../assets/common.js"></script>
+<script src="../data/deps.js"></script>
+<script src="../assets/deps.js"></script>
+</body>
+</html>

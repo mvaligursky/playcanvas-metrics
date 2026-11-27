@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore dependencies - PlayCanvas metrics</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body data-page="explore">
+<main>
+    <div class="crumbs"><a href="../../">PlayCanvas metrics</a> / <a href="../">Dependencies</a> / Explore</div>
+    <h1>Explore dependencies</h1>
+    <p class="lede">What one release installs, or what changed between two. Each top-level dependency is a box holding the packages only it installs; packages that several need are under (shared). Sizes are unpacked, as installed on Linux x64.</p>
+
+    <div class="filters">
+        <label>Project
+            <select autocomplete="off" id="project">
+                <option value="engine">Engine</option>
+                <option value="examples">Examples</option>
+            </select>
+        </label>
+        <label>From
+            <select autocomplete="off" id="from"></select>
+        </label>
+        <label>To
+            <select autocomplete="off" id="to"></select>
+        </label>
+        <label class="check"><input type="checkbox" autocomplete="off" id="compare"> <span id="compareLabel"></span></label>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <section class="card">
+        <h2 id="tmTitle">Dependencies</h2>
+        <p class="note">Click a box's name to zoom in.</p>
+        <div class="tm-crumbs" id="tmCrumbs"></div>
+        <div class="treemap" id="treemap" style="height: 640px"></div>
+        <div class="legend" id="tmLegend"></div>
+    </section>
+
+    <section class="card">
+        <h2>Top-level dependencies</h2>
+        <div class="scroll"><table id="topTable"></table></div>
+    </section>
+
+    <section class="card" id="changesCard">
+        <h2>Packages that changed</h2>
+        <p class="note" id="changesNote"></p>
+        <div class="scroll"><table id="changesTable"></table></div>
+        <button id="changesMore" hidden style="margin-top: 10px"></button>
+    </section>
+</main>
+
+<script src="../../assets/chart.js"></script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/treemap.js"></script>
+<script src="../../data/deps.js"></script>
+<script src="../../assets/deps.js"></script>
+</body>
+</html>
