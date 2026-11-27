@@ -11,6 +11,7 @@
     "bench": "node harness/run.mjs",
     "report": "node harness/report-page.mjs",
     "builds": "node harness/rebuild.mjs",
+    "deps": "node harness/deps.mjs",
     "serve": "node harness/serve.mjs",
     "lint": "eslint harness scenarios eslint.config.mjs",
     "lint:fix": "npm run lint -- --fix",
